@@ -15,13 +15,19 @@ body
     font-family: 'Inter', sans-serif;
     width: 100%;
     height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     color: #000;
     background-color: var(--colorOscuro);
 }
 .container
+{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin-top: 5%;
+
+}
+.mini-container
 {
     width: 25%;
     background-color: #fff;
@@ -52,6 +58,7 @@ form
     border-radius: 10px;
     width: 90%;
     margin: 0% 5%;
+    margin-bottom: 10%;
     padding: 5%;
 }
 form label
@@ -91,19 +98,56 @@ form button:hover
     color: #000;
     transition: 0.5s;
 }
-.link-registro
+.navbar
 {
-    margin: 10% 0%;
+    background-color: #fff;
+    width: 100%;
+    height: 25%;
+}
+nav
+{
+    display: flex;
+}
+.identifier-user
+{
+    width: 50%;
+}
+.identifier-user img
+{
+    width: 100px;
+    margin-left: 15%;
+    margin-top: 2%;
+}
+nav ul
+{
+    display: flex;
+    list-style: none;
+    width: 50%;
+    align-items: flex-end;
+    justify-content: center;
+}
+nav li
+{
+    width: 26.6%;
     text-align: center;
-    font-size: 12px;
-}
-.link-registro a{
-    text-decoration: none;
-    color: #9384d1;
+    border-radius: 10px;
+    margin: 2%;
+    padding: 1% 0%;
     transition: 0.5s;
 }
-.link-registro a:hover
+nav a
 {
-    font-weight: bolder;
+    text-decoration: none;
+    color: var(--colorOscuro);
+
+
+}
+nav li:hover
+{
+    background-color: #9384d1;
     transition: 0.5s;
+}
+.active
+{
+    background-color: #9484d181;
 }
