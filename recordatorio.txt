@@ -1,0 +1,7 @@
+Wheryz
+    font-family: "Satisfy", cursive;
+Body
+    font-family: 'Inter', sans-serif;
+
+
+    
