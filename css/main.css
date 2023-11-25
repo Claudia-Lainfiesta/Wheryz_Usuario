@@ -142,7 +142,7 @@ form input
     margin-top: 2%;
     padding: 1%;
     padding-left: 3%;
-    background-color: var(--morado2);
+    background-color: var(--morado4);
     border: none;
     border-radius: 5px;
     font-size: medium;
@@ -152,7 +152,7 @@ form input
 }
 form input:focus
 {
-    background-color: var(--morado3);
+    background-color: var(--morado5);
     transition: 0.5s;
 }
 form button

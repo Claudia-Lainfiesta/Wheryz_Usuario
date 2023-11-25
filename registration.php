@@ -57,27 +57,27 @@ if (!empty($_POST)) {
                 <h2>Registrar</h2>
             </div>
             <form method="Post">
-                <div>
+                <div class="datos">
                     <label for="name">Nombre</label>
                     <br>
                     <input type="text" name="name" id="name">
                 </div>
-                <div>
+                <div class="datos">
                     <label for="">Apellido</label>
                     <br>
                     <input type="text" name="lastname" id="lastname">
                 </div>
-                <div>
+                <div class="datos">
                     <label for="">Nombre de usuario</label>
                     <br>
                     <input type="text" name="user" id="user">
                 </div>
-                <div>
+                <div class="datos">
                     <label for="">Correo Electrónico</label>
                     <br>
                     <input type="email" name="email" id="email">
                 </div>
-                <div>
+                <div class="datos">
                     <label for="">Contraseña</label>
                     <br>
                     <input type="password" name="password" id="password">
