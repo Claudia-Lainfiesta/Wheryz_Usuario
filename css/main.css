@@ -84,7 +84,10 @@ body {
     background-color: var(--morado1);
     border-radius: 10px;
 }
-
+.active
+{
+    background-color: var(--morado6);
+}
 .container
 {
     width: 100%;
