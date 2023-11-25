@@ -1,3 +1,18 @@
+<?php
+include 'connection/querys.php';
+
+if (!empty($_POST)) {
+    if (
+        !empty($_POST['user']) &&
+        !empty($_POST["password"])
+    ) {
+        $user = $_POST['user'];
+        $password = $_POST['password'];
+
+        login($user, $password);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,7 +23,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="img/image2vector.svg" type="image/x-icon">
 
-    <script src="js/login.js" defer></script>
+    <script src="js/navbar.js" defer></script>
 </head>
 <body>
         <nav class="navbar">
@@ -23,9 +38,9 @@
             </a>
             <div class="navbar-links">
               <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li class="active"><a href="login.html">Iniciar Sesión</a></li>
-                <li><a href="registration.html">Registrar</a></li>
+                <li><a href="index.php">Inicio</a></li>
+                <li class="active"><a href="login.php">Iniciar Sesión</a></li>
+                <li><a href="registration.php">Registrar</a></li>
               </ul>
             </div>
           </nav>
@@ -36,18 +51,18 @@
                 <img src="img/image2vector.svg" alt="">
                 <h2>Iniciar Sesión</h2>
             </div>
-            <form action="" method="Post">
-                <div>
-                    <label for="">Nombre de usuario</label>
+            <form method="post">
+                <div class="datos">
+                    <label for="user">Nombre de usuario</label>
                     <br>
-                    <input type="text" name="" id="">
+                    <input type="text" name="user" id="user">
                 </div>
-                <div>
-                    <label for="">Contraseña</label>
+                <div class="datos">
+                    <label for="password">Contraseña</label>
                     <br>
-                    <input type="password" name="" id="">
+                    <input type="password" name="password" id="password">
                 </div>
-                <button value="">Ingresar</button>
+                <button type="submit" value="Iniciar Sesión">Iniciar Sesión</button>
             </form>
         </div>
     </div>

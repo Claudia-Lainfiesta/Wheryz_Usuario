@@ -170,7 +170,10 @@ form button:hover
     color: var(--morado0);
     transition: 0.5s;
 }
-
+.datos
+{
+    text-align: left;
+}
 @media (max-width: 800px) {
     .navbar {
         flex-direction: column;

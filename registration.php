@@ -1,3 +1,23 @@
+<?php
+include 'connection/querys.php';
+if (!empty($_POST)) {
+    if (
+        !empty($_POST['name']) &&
+        !empty($_POST['lastname']) &&
+        !empty($_POST['user']) &&
+        !empty($_POST['email']) &&
+        !empty($_POST['password'])
+    ) {
+        $name = $_POST['name'];
+        $lastname = $_POST['lastname'];
+        $user = $_POST['user'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        register($name, $lastname, $user, $email, $password);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,7 +28,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="img/image2vector.svg" type="image/x-icon">
 
-    <script src="js/login.js" defer></script>
+    <script src="js/navbar.js" defer></script>
 </head>
 <body>
         <nav class="navbar">
@@ -23,9 +43,9 @@
             </a>
             <div class="navbar-links">
               <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="login.html">Iniciar Sesión</a></li>
-                <li class="active"><a href="registration.html">Registrar</a></li>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="login.php">Iniciar Sesión</a></li>
+                <li class="active"><a href="registration.php">Registrar</a></li>
               </ul>
             </div>
           </nav>
@@ -36,33 +56,33 @@
                 <img src="img/image2vector.svg" alt="">
                 <h2>Registrar</h2>
             </div>
-            <form action="" method="Post">
+            <form method="Post">
                 <div>
-                    <label for="">Nombre</label>
+                    <label for="name">Nombre</label>
                     <br>
-                    <input type="password" name="" id="">
+                    <input type="text" name="name" id="name">
                 </div>
                 <div>
                     <label for="">Apellido</label>
                     <br>
-                    <input type="password" name="" id="">
+                    <input type="text" name="lastname" id="lastname">
                 </div>
                 <div>
                     <label for="">Nombre de usuario</label>
                     <br>
-                    <input type="text" name="" id="">
+                    <input type="text" name="user" id="user">
                 </div>
                 <div>
                     <label for="">Correo Electrónico</label>
                     <br>
-                    <input type="email" name="" id="">
+                    <input type="email" name="email" id="email">
                 </div>
                 <div>
                     <label for="">Contraseña</label>
                     <br>
-                    <input type="password" name="" id="">
+                    <input type="password" name="password" id="password">
                 </div>
-                <button value="">Ingresar</button>
+                <button type="submit" value="Registrarse">Ingresar</button>
             </form>
         </div>
     </div>

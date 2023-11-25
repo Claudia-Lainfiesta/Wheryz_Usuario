@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="img/image2vector.svg" type="image/x-icon">
 
-    <script src="js/login.js" defer></script>
+    <script src="js/navbar.js" defer></script>
 </head>
 <body>
         <nav class="navbar">
@@ -23,15 +23,15 @@
             </a>
             <div class="navbar-links">
               <ul>
-                <li class="active"><a href="index.html">Inicio</a></li>
-                <li><a href="login.html">Iniciar Sesión</a></li>
-                <li><a href="registration.html">Registrar</a></li>
+                <li class="active"><a href="index.php">Inicio</a></li>
+                <li><a href="login.php">Iniciar Sesión</a></li>
+                <li><a href="registration.php">Registrar</a></li>
               </ul>
             </div>
           </nav>
 
     <div>
-        <img src="https://indiehoy.com/wp-content/uploads/2020/12/shrek.jpg" alt="">
+        <img src="https://indiehoy.com/wp-content/uploads/2020/12/shrek.jpg" alt="" style="width: 50%;">
     </div>
 </body>
 </html>
