@@ -1,24 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Satisfy&display=swap');
 :root
 {
-    --colorOscuro: #35155d;
+    --morado0: #35155D;
+    --morado1: #8D46E1;
+    --morado2:#9B66EC;
+    --morado3: #B492F3;
+    --morado4: #CDBAF8;
+    --morado5: #E2D9FB;
+    --morado6: #F0EAFD;
 }
-
-*
-{
-    margin: 0%;
-    padding: 0%;
+* {
     box-sizing: border-box;
 }
-body
-{
-    font-family: 'Inter', sans-serif;
-    width: 100%;
-    height: 500px;
 
-    color: #000;
-    background-color: var(--colorOscuro);
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--morado1);
+    font-family: 'Inter', sans-serif;
 }
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    color: var(--morado1);
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+    display: flex;
+    font-family: "Satisfy", cursive;
+}
+.brand-title img
+{
+    width: 20%;
+}
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+    transition: 0.5s;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: var(--morado1);
+    padding: 1rem;
+}
+
+.navbar-links li:hover {
+    background-color: var(--morado4);
+    transition: 0.5s;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--morado1);
+    border-radius: 10px;
+}
+
 .container
 {
     width: 100%;
@@ -77,6 +142,7 @@ form input
     font-size: medium;
     outline: none;
     transition: 0.5s;
+    width: 100%;
 }
 form input:focus
 {
@@ -98,56 +164,49 @@ form button:hover
     color: #000;
     transition: 0.5s;
 }
-.navbar
-{
-    background-color: #fff;
-    width: 100%;
-    height: 25%;
-}
-nav
-{
-    display: flex;
-}
-.identifier-user
-{
-    width: 50%;
-}
-.identifier-user img
-{
-    width: 100px;
-    margin-left: 15%;
-    margin-top: 2%;
-}
-nav ul
-{
-    display: flex;
-    list-style: none;
-    width: 50%;
-    align-items: flex-end;
-    justify-content: center;
-}
-nav li
-{
-    width: 26.6%;
-    text-align: center;
-    border-radius: 10px;
-    margin: 2%;
-    padding: 1% 0%;
-    transition: 0.5s;
-}
-nav a
-{
-    text-decoration: none;
-    color: var(--colorOscuro);
 
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-}
-nav li:hover
-{
-    background-color: #9384d1;
-    transition: 0.5s;
-}
-.active
-{
-    background-color: #9484d181;
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+    .brand-title {
+        font-size: 1rem;
+        margin: .5rem;
+        font-family: "Satisfy", cursive;
+    }
+    .brand-title img
+    {
+        width: 10%;
+    }
+    .mini-container
+    {
+        width: 50%;
+    }
 }

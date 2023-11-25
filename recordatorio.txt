@@ -3,5 +3,10 @@ Wheryz
 Body
     font-family: 'Inter', sans-serif;
 
-
-    
+Colores de Usuario
+#8D46E1
+#9B66EC
+#B492F3
+#CDBAF8
+#E2D9FB
+#F0EAFD

@@ -7,33 +7,42 @@
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="img/image2vector.svg" type="image/x-icon">
+
+    <script src="js/login.js" defer></script>
 </head>
 <body>
-    <header class="navbar">
-        <nav>
-            <div class="identifier-user">
+        <nav class="navbar">
+            <div class="brand-title">
                 <img src="img/image2vector.svg" alt="">
+                <h1>Wheryz</h1>
             </div>
-            <ul>
+            <a href="#" class="toggle-button">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </a>
+            <div class="navbar-links">
+              <ul>
                 <li><a href="#">Inicio</a></li>
-                <li class="active"><a href="#">Iniciar sesión</a></li>
-                <li><a href="#">Registrarse</a></li>
-            </ul>
-        </nav>
-    </header>
+                <li><a href="#">Iniciar Sesión</a></li>
+                <li><a href="#">Registrar</a></li>
+              </ul>
+            </div>
+          </nav>
+ 
     <div class="container">
         <div class="mini-container">
             <div class="titulo">
                 <img src="img/image2vector.svg" alt="">
                 <h2>Iniciar Sesión</h2>
             </div>
-            <form action="" method="Post" class="form-box">
-                <div class="datos">
+            <form action="" method="Post">
+                <div>
                     <label for="">Nombre de usuario</label>
                     <br>
                     <input type="text" name="" id="">
                 </div>
-                <div class="datos">
+                <div>
                     <label for="">Contraseña</label>
                     <br>
                     <input type="password" name="" id="">
@@ -42,6 +51,5 @@
             </form>
         </div>
     </div>
-
 </body>
 </html>
