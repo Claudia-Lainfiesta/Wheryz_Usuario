@@ -3,7 +3,7 @@
 {
     --morado0: #35155D;
     --morado1: #8D46E1;
-    --morado2:#9B66EC;
+    --morado2: #9B66EC;
     --morado3: #B492F3;
     --morado4: #CDBAF8;
     --morado5: #E2D9FB;
@@ -41,6 +41,7 @@ body {
 }
 .navbar-links {
     height: 100%;
+    margin-right: 3%;
 }
 
 .navbar-links ul {
@@ -97,7 +98,8 @@ body {
     width: 25%;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0.5px 0.2px 20px#9384d1;
+    box-shadow: 0.5px 0.2px 20px var(--morado0);
+    color: var(--morado0);
 }
 .titulo
 {
@@ -119,7 +121,7 @@ form
     text-align: center;
     align-items: center;
     justify-content: center;
-    border: solid 1px #35155d;
+    border: solid 1px var(--morado1);
     border-radius: 10px;
     width: 90%;
     margin: 0% 5%;
@@ -129,6 +131,7 @@ form
 form label
 {
     font-size: 13px;
+    color: var(--morado0);
 }
 form input
 {
@@ -136,7 +139,7 @@ form input
     margin-top: 2%;
     padding: 1%;
     padding-left: 3%;
-    background-color: #9384d1;
+    background-color: var(--morado2);
     border: none;
     border-radius: 5px;
     font-size: medium;
@@ -146,13 +149,13 @@ form input
 }
 form input:focus
 {
-    background-color: #9484d179;
+    background-color: var(--morado3);
     transition: 0.5s;
 }
 form button
 {
     padding: 3%;
-    background-color: #35155d;
+    background-color: var(--morado1);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -160,8 +163,8 @@ form button
 }
 form button:hover
 {
-    background-color: #35155d70;
-    color: #000;
+    background-color: var(--morado2);
+    color: var(--morado0);
     transition: 0.5s;
 }
 
