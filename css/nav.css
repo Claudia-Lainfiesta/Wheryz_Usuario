@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Satisfy&display=swap');
+:root
+{
+    --morado0: #35155D;
+    --morado1: #8D46E1;
+    --morado2: #9B66EC;
+    --morado3: #B492F3;
+    --morado4: #CDBAF8;
+    --morado5: #E2D9FB;
+    --morado6: #F0EAFD;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #35155d10;
+    display: flex;
+}
+
+main {
+    width: 100%;
+    margin: 25px;
+    padding: 25px;
+    min-height: calc(100vh - 50px);
+    position: relative;
+    background: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1::selection {
+    background-color: #9384d1;
+    color: #fff;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2::selection {
+    background-color: #9384d1;
+    color: #fff;
+}
+
+h3 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3::selection {
+    background-color: #9384d1;
+    color: #fff;
+}
+
+p {
+    font-size: 16px;
+    text-align: justify;
+}
+
+p::selection {
+    background-color: #9384d1;
+    color: #fff;
+}
+
+.menu {
+    background-color: var(--morado1);
+    width: 300px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0ms ease;
+    transition-property: width;
+}
+
+.size-aside-navbar {
+    justify-content: right;
+}
+
+.menu nav {
+    transition: 150ms ease;
+}
+
+.menu nav h1 {
+    font-family: "Satisfy", cursive;
+    color: #fff;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 50px 0;
+}
+
+.menu nav:last-child {
+    text-align: center;
+}
+
+.menu nav ul {
+    list-style: none;
+}
+
+.active {
+    background-color: var(--morado3);
+}
+
+.menu nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.menu nav ul li a:hover {
+    background-color: var(--morado2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.menu nav ul li a img {
+    width: 1.2rem;
+    margin-right: 10px;
+}
