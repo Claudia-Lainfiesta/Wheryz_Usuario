@@ -8,10 +8,15 @@
     <meta name="theme-color" content="#35155d">
 
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/finder.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script src="js/nav.js"></script>
+    <script src="js/finder.js"></script>
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 </head>
 <body>
-
+<!--Navbar principal/CSS y JS=nav-->
 <header class="menu" id="menu">
     <nav>
         <ul>
@@ -85,18 +90,25 @@
                     <span id="cerrar-sesión">Cerrar sesión</span>
                 </a>
             </li>
-            <li>
-                <a href="ayuda.php">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1saWZlLWJ1b3kiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIi8+PHBhdGggZD0ibTQuOTMgNC45MyA0LjI0IDQuMjQiLz48cGF0aCBkPSJtMTQuODMgOS4xNyA0LjI0LTQuMjQiLz48cGF0aCBkPSJtMTQuODMgMTQuODMgNC4yNCA0LjI0Ii8+PHBhdGggZD0ibTkuMTcgMTQuODMtNC4yNCA0LjI0Ii8+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iNCIvPjwvc3ZnPg=="
-                         alt="ayuda"/>
-                    <span id="ayuda">Ayuda</span>
-                </a>
-            </li>
         </ul>
     </nav>
 </header>
 <main>
-    <h2>Panel principal</h2>
+    <!--Busacador/CSS y JS=finder-->
+    <nav class="search">
+        <div class="logo-wheryz">
+            <img src="img/image2vector.svg" alt="">
+            <h1>Wheryz</h1>
+        </div>
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Búsqueda. . . ">
+            <a class="search-btn" href="#">
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg==" alt="">
+            </a>
+          </div>
+      </nav>
+      <!--Contenido-->
+      <h1>Información</h1>
 </main>
 </body>
 </html>

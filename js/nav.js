@@ -37,7 +37,6 @@ function minimize() {
       "reservaciones",
       "colaborador",
       "cerrar-sesión",
-      "ayuda",
       "minimize",
   ];
 
@@ -64,7 +63,6 @@ function maximice() {
       "reservaciones",
       "colaborador",
       "cerrar-sesión",
-      "ayuda",
       "minimize",
   ];
 

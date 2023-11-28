@@ -20,62 +20,10 @@ body {
     background-color: #35155d10;
     display: flex;
 }
-
-main {
+main
+{
     width: 100%;
-    margin: 25px;
-    padding: 25px;
-    min-height: calc(100vh - 50px);
-    position: relative;
-    background: #fff;
-    border-radius: .5rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    line-height: 1.5;
 }
-
-h1 {
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h1::selection {
-    background-color: #9384d1;
-    color: #fff;
-}
-
-h2 {
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h2::selection {
-    background-color: #9384d1;
-    color: #fff;
-}
-
-h3 {
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h3::selection {
-    background-color: #9384d1;
-    color: #fff;
-}
-
-p {
-    font-size: 16px;
-    text-align: justify;
-}
-
-p::selection {
-    background-color: #9384d1;
-    color: #fff;
-}
-
 .menu {
     background-color: var(--morado1);
     width: 300px;

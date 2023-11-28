@@ -1,0 +1,119 @@
+:root
+{
+    --morado0: #35155D;
+    --morado1: #8D46E1;
+    --morado2: #9B66EC;
+    --morado3: #B492F3;
+    --morado4: #CDBAF8;
+    --morado5: #E2D9FB;
+    --morado6: #F0EAFD;
+}
+
+.search
+{
+    display: flex;
+    width: 100%;
+    height: 25%;
+    align-items: center;
+}
+.logo-wheryz
+{
+    width: 30%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    padding-left: 3%;
+}
+.logo-wheryz img
+{
+   width: 30%;
+}
+.logo-wheryz h1
+{
+    font-family: "Satisfy", cursive;
+    font-size: 60px;
+}
+/* div */
+.search-box {
+    background: var(--morado2);
+    width: 65%;
+    height: 40px;
+    border-radius: 50px;
+    padding: 10px;
+  }
+  /* input */
+  .search-input {
+    outline: none;
+    border: none;
+    background: none;
+    width: 90%;
+    padding: 0;
+    color: #fff;
+
+    font-size: 16px;
+    transition: .3s;
+
+  }
+  .search-input::placeholder {
+    color: var(--morado4);
+  }
+  /* icon */
+  .search-btn {
+    color: #fff;
+    float: right;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    .search {
+        height: 10%;
+    }
+
+    .logo-wheryz img {
+        max-width: 80px;
+    }
+
+    .logo-wheryz h1 {
+        font-size: 30px;
+    }
+
+    .search-box {
+        height: 30px;
+        padding: 0 5px;
+    }
+
+    .search-input {
+        font-size: 14px;
+        width: 70%;
+    }
+}
+  @media only screen and (max-width: 750px) {
+    .search {
+        height: 60px;
+    }
+
+    .logo-wheryz img {
+        max-width: 40px;
+    }
+
+    .logo-wheryz h1 {
+        font-size: 15px;
+    }
+
+    .search-box {
+        height: 30px;
+        padding: 0 5px;
+    }
+
+    .search-input {
+        font-size: 14px;
+        width: 70%;
+    }
+}
+
+
+
