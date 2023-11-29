@@ -1,0 +1,48 @@
+:root
+{
+    --morado0: #35155D;
+    --morado1: #8D46E1;
+    --morado2: #9B66EC;
+    --morado3: #B492F3;
+    --morado4: #CDBAF8;
+    --morado5: #E2D9FB;
+    --morado6: #F0EAFD;
+}
+.content
+{
+    width: 100%;
+    height: auto;
+}
+.mini-content
+{
+    display: flex;
+}
+.square
+{
+    width: 50%;
+    height: auto;
+    margin: 2% 5%;
+    margin-top: 2%;
+    padding: 1.5%;
+    border: 1px solid var(--morado6);
+    box-shadow: 10px 5px 5px var(--morado5);
+    border-radius: 10px;
+}
+#mapa2
+{
+    width: 90%;
+    margin-top: 0;
+}
+@media only screen and (max-width: 900px)
+{
+    .mini-content
+    {
+        display: block;
+        width: 100%;
+        justify-content: center;
+    }
+    .square
+    {
+        width: 90%;
+    }
+}
