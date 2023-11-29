@@ -2,18 +2,23 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Wheryz | Búsqueda</title>
+    <title>Wheryz | Inicio</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#35155d">
 
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/finder.css">
+    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/ol.css ">
 
     <link rel="shortcut icon" href="img/image2vector.svg" type="image/x-icon">
 
     <script src="js/nav.js"></script>
     <script src="js/finder.js"></script>
+    <script type="text/javascript" src="js/mapa.js"></script>
+    <script type="text/javascript" src="js/ol.js"></script>
 
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 </head>
@@ -40,14 +45,14 @@
 
         <ul>
             <li>
-                <a href="inicio.php">
+                <a href="inicio.php" class="active">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ob21lIj48cGF0aCBkPSJtMyA5IDktNyA5IDd2MTFhMiAyIDAgMCAxLTIgMkg1YTIgMiAwIDAgMS0yLTJ6Ii8+PHBvbHlsaW5lIHBvaW50cz0iOSAyMiA5IDEyIDE1IDEyIDE1IDIyIi8+PC9zdmc+"
                          alt="home"/>
                     <span id="inicio">Inicio</span>
                 </a>
             </li>
             <li>
-                <a href="busqueda.php" class="active">
+                <a href="busqueda.php">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg=="
                          alt="busqueda"/>
                     <span id="busqueda">Búsqueda</span>
@@ -79,14 +84,14 @@
     <nav>
         <ul>
             <li>
-                <a href="configuración.php">
+                <a href="configuracion.php">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZXR0aW5ncyI+PHBhdGggZD0iTTEyLjIyIDJoLS40NGEyIDIgMCAwIDAtMiAydi4xOGEyIDIgMCAwIDEtMSAxLjczbC0uNDMuMjVhMiAyIDAgMCAxLTIgMGwtLjE1LS4wOGEyIDIgMCAwIDAtMi43My43M2wtLjIyLjM4YTIgMiAwIDAgMCAuNzMgMi43M2wuMTUuMWEyIDIgMCAwIDEgMSAxLjcydi41MWEyIDIgMCAwIDEtMSAxLjc0bC0uMTUuMDlhMiAyIDAgMCAwLS43MyAyLjczbC4yMi4zOGEyIDIgMCAwIDAgMi43My43M2wuMTUtLjA4YTIgMiAwIDAgMSAyIDBsLjQzLjI1YTIgMiAwIDAgMSAxIDEuNzNWMjBhMiAyIDAgMCAwIDIgMmguNDRhMiAyIDAgMCAwIDItMnYtLjE4YTIgMiAwIDAgMSAxLTEuNzNsLjQzLS4yNWEyIDIgMCAwIDEgMiAwbC4xNS4wOGEyIDIgMCAwIDAgMi43My0uNzNsLjIyLS4zOWEyIDIgMCAwIDAtLjczLTIuNzNsLS4xNS0uMDhhMiAyIDAgMCAxLTEtMS43NHYtLjVhMiAyIDAgMCAxIDEtMS43NGwuMTUtLjA5YTIgMiAwIDAgMCAuNzMtMi43M2wtLjIyLS4zOGEyIDIgMCAwIDAtMi43My0uNzNsLS4xNS4wOGEyIDIgMCAwIDEtMiAwbC0uNDMtLjI1YTIgMiAwIDAgMS0xLTEuNzNWNGEyIDIgMCAwIDAtMi0yeiIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiLz48L3N2Zz4="
                          alt="configuraciones"/>
                     <span id="configuración">Configuración</span>
                 </a>
             </li>
             <li>
-                <a href="php/logout.php">
+                <a href="connection/logout.php">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1sb2ctb3V0Ij48cGF0aCBkPSJNOSAyMUg1YTIgMiAwIDAgMS0yLTJWNWEyIDIgMCAwIDEgMi0yaDQiLz48cG9seWxpbmUgcG9pbnRzPSIxNiAxNyAyMSAxMiAxNiA3Ii8+PGxpbmUgeDE9IjIxIiB4Mj0iOSIgeTE9IjEyIiB5Mj0iMTIiLz48L3N2Zz4="
                          alt="logout"/>
                     <span id="cerrar-sesión">Cerrar sesión</span>
@@ -111,8 +116,29 @@
         </div>
       </nav>
       <!--Contenido-->
-        <div class="content">
-        </div> 
+      <div class="content">
+        <div class="mini-content">
+            <div id="recommendations" class="square">
+                <h3>Recomendaciones</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio vero, at facilis non deserunt possimus accusamus illo voluptatibus dicta, ipsa sunt quia. Maiores a quas iure quia consequuntur eveniet quidem?
+                </p>
+            </div>
+            <div id="offers" class="square">
+                <h3>Ofertas</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum libero reprehenderit quod mollitia quidem rem vero quae temporibus perspiciatis, provident magni illo distinctio maiores molestias, eos rerum ipsum quas. Ad.</p>
+            </div>
+        </div>
+        <div>
+            <div class="square" id="mapa2">
+                <div class="row">
+                    
+                    <div class="col-12">
+                        <div id="mapa" style="min-height: 500; height: 100px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
 </main>
 </body>
 </html>

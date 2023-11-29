@@ -2,25 +2,20 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Wheryz | Inicio</title>
+    <title>Wheryz | Configuración</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#35155d">
 
     <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/finder.css">
-    <link rel="stylesheet" href="css/inicio.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/ol.css ">
+    <link rel="stylesheet" href="css/configuracion.css">
 
     <link rel="shortcut icon" href="img/image2vector.svg" type="image/x-icon">
 
     <script src="js/nav.js"></script>
-    <script src="js/finder.js"></script>
-    <script type="text/javascript" src="js/mapa.js"></script>
-    <script type="text/javascript" src="js/ol.js"></script>
+    <script src="js/configuracion.js"></script>
 
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
 </head>
 <body>
 <!--Navbar principal/CSS y JS=nav-->
@@ -45,7 +40,7 @@
 
         <ul>
             <li>
-                <a href="inicio.php" class="active">
+                <a href="inicio.php">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ob21lIj48cGF0aCBkPSJtMyA5IDktNyA5IDd2MTFhMiAyIDAgMCAxLTIgMkg1YTIgMiAwIDAgMS0yLTJ6Ii8+PHBvbHlsaW5lIHBvaW50cz0iOSAyMiA5IDEyIDE1IDEyIDE1IDIyIi8+PC9zdmc+"
                          alt="home"/>
                     <span id="inicio">Inicio</span>
@@ -84,7 +79,7 @@
     <nav>
         <ul>
             <li>
-                <a href="configuración.php">
+                <a href="configuracion.php" class="active">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZXR0aW5ncyI+PHBhdGggZD0iTTEyLjIyIDJoLS40NGEyIDIgMCAwIDAtMiAydi4xOGEyIDIgMCAwIDEtMSAxLjczbC0uNDMuMjVhMiAyIDAgMCAxLTIgMGwtLjE1LS4wOGEyIDIgMCAwIDAtMi43My43M2wtLjIyLjM4YTIgMiAwIDAgMCAuNzMgMi43M2wuMTUuMWEyIDIgMCAwIDEgMSAxLjcydi41MWEyIDIgMCAwIDEtMSAxLjc0bC0uMTUuMDlhMiAyIDAgMCAwLS43MyAyLjczbC4yMi4zOGEyIDIgMCAwIDAgMi43My43M2wuMTUtLjA4YTIgMiAwIDAgMSAyIDBsLjQzLjI1YTIgMiAwIDAgMSAxIDEuNzNWMjBhMiAyIDAgMCAwIDIgMmguNDRhMiAyIDAgMCAwIDItMnYtLjE4YTIgMiAwIDAgMSAxLTEuNzNsLjQzLS4yNWEyIDIgMCAwIDEgMiAwbC4xNS4wOGEyIDIgMCAwIDAgMi43My0uNzNsLjIyLS4zOWEyIDIgMCAwIDAtLjczLTIuNzNsLS4xNS0uMDhhMiAyIDAgMCAxLTEtMS43NHYtLjVhMiAyIDAgMCAxIDEtMS43NGwuMTUtLjA5YTIgMiAwIDAgMCAuNzMtMi43M2wtLjIyLS4zOGEyIDIgMCAwIDAtMi43My0uNzNsLS4xNS4wOGEyIDIgMCAwIDEtMiAwbC0uNDMtLjI1YTIgMiAwIDAgMS0xLTEuNzNWNGEyIDIgMCAwIDAtMi0yeiIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiLz48L3N2Zz4="
                          alt="configuraciones"/>
                     <span id="configuración">Configuración</span>
@@ -100,45 +95,38 @@
         </ul>
     </nav>
 </header>
-<main>
-    <!--Busacador/CSS y JS=finder-->
-
-    <nav class="search">
-        <div class="logo-wheryz">
-            <img src="img/image2vector.svg" alt="">
-            <h1>Wheryz</h1>
-        </div>
-        <div class="search-box">
-            <input type="search" class="search-input" placeholder="Búsqueda. . . " >
-            <a class="search-btn" href="#">
-              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg==" alt="">
-            </a>
-        </div>
-      </nav>
-      <!--Contenido-->
-      <div class="content">
-        <div class="mini-content">
-            <div id="recommendations" class="square">
-                <h3>Recomendaciones</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio vero, at facilis non deserunt possimus accusamus illo voluptatibus dicta, ipsa sunt quia. Maiores a quas iure quia consequuntur eveniet quidem?
-                </p>
-            </div>
-            <div id="offers" class="square">
-                <h3>Ofertas</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum libero reprehenderit quod mollitia quidem rem vero quae temporibus perspiciatis, provident magni illo distinctio maiores molestias, eos rerum ipsum quas. Ad.</p>
-            </div>
-        </div>
-        <div>
-            <div class="square" id="mapa2">
-                <div class="row">
-                    
-                    <div class="col-12">
-                        <div id="mapa" style="min-height: 500; height: 100px;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--Contenido-->
+<main class="form-config">
+      <h2>Configuración</h2>
+      <a onclick="open_change_image()">
+          <img src="img/image2vector.svg" alt="Logo de Wheryz" class="open-change-photo-menu">
+      </a>
+      <div hidden id="desplegar-cambiar-foto">
+          <div id="panel-add-notice" class="change-image">
+              <form action="php/new-notice.php" method="post">
+                  <a onclick="close_change_image()" class="close">
+                          <span class="material-symbols-outlined">
+                              X
+                          </span>
+                  </a>
+                  <h3>Cambiar fotografía</h3>
+                  <label for="photo de perfil">Archivo:</label>
+                  <input type="file" name="photo de perfil" id="photo de perfil" placeholder="Drop and click">
+                  <input type="submit" value="Guardar">
+              </form>
+          </div>
       </div>
+      <form action="config.php" method="post" class="info">
+          <label for="nombre-empresa">Nombre:</label>
+          <input type="text" name="nombre-empresa" id="nombre-empresa" placeholder="Nombre de usuario">
+          <label for="nombre-empresa">Correo Electrónico:</label>
+          <input type="email" name="correo" id="correo" placeholder="Correo Electrónico">
+          <label for="nombre-empresa">Numero telefónico:</label>
+          <input type="number" name="contacto" id="contacto" placeholder="Numero de contacto">
+          <label for="nombre-empresa">Dirección:</label>
+          <input type="text" name="dirección" id="dirección" placeholder="Dirección">
+          <input type="submit" value="Guardar Cambios">
+      </form>
 </main>
 </body>
 </html>
