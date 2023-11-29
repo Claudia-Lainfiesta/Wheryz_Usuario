@@ -97,36 +97,90 @@
 </header>
 <!--Contenido-->
 <main class="form-config">
-      <h2>Configuración</h2>
-      <a onclick="open_change_image()">
-          <img src="img/image2vector.svg" alt="Logo de Wheryz" class="open-change-photo-menu">
-      </a>
-      <div hidden id="desplegar-cambiar-foto">
-          <div id="panel-add-notice" class="change-image">
-              <form action="php/new-notice.php" method="post">
-                  <a onclick="close_change_image()" class="close">
-                          <span class="material-symbols-outlined">
-                              X
-                          </span>
-                  </a>
-                  <h3>Cambiar fotografía</h3>
-                  <label for="photo de perfil">Archivo:</label>
-                  <input type="file" name="photo de perfil" id="photo de perfil" placeholder="Drop and click">
-                  <input type="submit" value="Guardar">
-              </form>
-          </div>
+    <h2>Configuración</h2>
+    <a onclick="open_change_image()">
+      <img class="open-change-photo-menu" src="img/image2vector.svg" alt="Logo de Wheryz" id="profile-picture">
+    </a>
+    <div id="desplegar-cambiar-foto" hidden>
+      <div class="change-image" id="panel-add-notice">
+        <form action="php/new-notice.php" method="post">
+          <a class="close" onclick="close_change_image()">
+            <span class="material-symbols-outlined">
+              x
+            </span>
+          </a>
+          <h3>Cambiar fotografía</h3>
+          <label for="photo de perfil">Archivo:</label>
+          <input id="photo de perfil" name="photo de perfil" type="file" placeholder="Drop and click">
+          <input type="submit" value="Guardar">
+        </form>
       </div>
-      <form action="config.php" method="post" class="info">
-          <label for="nombre-empresa">Nombre:</label>
-          <input type="text" name="nombre-empresa" id="nombre-empresa" placeholder="Nombre de usuario">
-          <label for="nombre-empresa">Correo Electrónico:</label>
-          <input type="email" name="correo" id="correo" placeholder="Correo Electrónico">
-          <label for="nombre-empresa">Numero telefónico:</label>
-          <input type="number" name="contacto" id="contacto" placeholder="Numero de contacto">
-          <label for="nombre-empresa">Dirección:</label>
-          <input type="text" name="dirección" id="dirección" placeholder="Dirección">
-          <input type="submit" value="Guardar Cambios">
-      </form>
-</main>
+    </div>
+    <form action="datos_user.php" method="post" class="datos">
+      <label for="name">
+        <span>
+          Nombre:
+        </span>
+        <div>
+          <input id="name" name="name" type="text" placeholder="Nombre" disabled>
+          <a href="" class="edit-link">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1wZW4tbGluZSI+PHBhdGggZD0iTTEyIDIwaDkiLz48cGF0aCBkPSJNMTYuNSAzLjVhMi4xMiAyLjEyIDAgMCAxIDMgM0w3IDE5bC00IDEgMS00WiIvPjwvc3ZnPg==" alt="Edit button">
+          </a>
+        </div>
+      </label>
+      <label for="lastname">
+        <span>
+          Apellido:
+        </span>
+        <div>
+          <input id="lastname" name="lastname" type="text" placeholder="Apellido" disabled>
+          <a href="" class="edit-link">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1wZW4tbGluZSI+PHBhdGggZD0iTTEyIDIwaDkiLz48cGF0aCBkPSJNMTYuNSAzLjVhMi4xMiAyLjEyIDAgMCAxIDMgM0w3IDE5bC00IDEgMS00WiIvPjwvc3ZnPg==" alt="Edit button">
+          </a>
+        </div>
+      </label>
+      <label for="user">
+        <span>
+          Nombre de usuario:
+        </span>
+        <div>
+          <input id="user" name="user" type="text" placeholder="Nombre de usuario" disabled>
+          <a href="" class="edit-link">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1wZW4tbGluZSI+PHBhdGggZD0iTTEyIDIwaDkiLz48cGF0aCBkPSJNMTYuNSAzLjVhMi4xMiAyLjEyIDAgMCAxIDMgM0w3IDE5bC00IDEgMS00WiIvPjwvc3ZnPg==" alt="Edit button">
+          </a>
+        </div>
+      </label>
+      <label for="email">
+        <span>
+          Correo electrónico:
+        </span>
+        <div>
+          <input id="email" name="email" type="email" placeholder="Correo electrónico" disabled>
+          <a href="" class="edit-link">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1wZW4tbGluZSI+PHBhdGggZD0iTTEyIDIwaDkiLz48cGF0aCBkPSJNMTYuNSAzLjVhMi4xMiAyLjEyIDAgMCAxIDMgM0w3IDE5bC00IDEgMS00WiIvPjwvc3ZnPg==" alt="Edit button">
+          </a>
+        </div>
+      </label>
+      <button>Guardar</button>
+    </form>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Obtén todas las etiquetas <a> que contienen las imágenes de edición
+      var editLinks = document.querySelectorAll("a.edit-link");
+  
+      // Agrega un evento clic a cada enlace de edición
+      editLinks.forEach(function(link) {
+        link.addEventListener("click", function(event) {
+          event.preventDefault(); // Evita que el enlace se comporte como un enlace normal
+  
+          // Habilita la edición del campo asociado al enlace
+          var inputField = link.parentNode.querySelector("input");
+          inputField.removeAttribute("disabled");
+        });
+      });
+    });
+  </script>
+  
 </body>
 </html>
