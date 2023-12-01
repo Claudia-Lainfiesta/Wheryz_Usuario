@@ -36,9 +36,6 @@ echo "
 
     <script src='../js/nav.js'></script>
     <script src='../js/finder.js'></script>
-
-
-    <link rel='stylesheet' href='https://unicons.iconscout.com/release/v4.0.0/css/line.css' />
 </head>
 <body>
 <!--Navbar principal/CSS y JS=nav-->
@@ -63,14 +60,14 @@ echo "
 
         <ul>
             <li>
-                <a href='../inicio.php' class='active'>
+                <a href='../inicio.php'>
                     <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ob21lIj48cGF0aCBkPSJtMyA5IDktNyA5IDd2MTFhMiAyIDAgMCAxLTIgMkg1YTIgMiAwIDAgMS0yLTJ6Ii8+PHBvbHlsaW5lIHBvaW50cz0iOSAyMiA5IDEyIDE1IDEyIDE1IDIyIi8+PC9zdmc+'
                          alt='home'/>
                     <span id='inicio'>Inicio</span>
                 </a>
             </li>
             <li>
-                <a href='../busqueda.php'>
+                <a href='../busqueda.php' class='active'>
                     <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg=='
                          alt='busqueda'/>
                     <span id='busqueda'>Búsqueda</span>
@@ -119,20 +116,20 @@ echo "
     </nav>
 </header>
 <main>
-    <!--Busacador/CSS y JS=finder-->
-
+    <!--Busacador/CSS=finder-->
     <nav class='search'>
         <div class='logo-wheryz'>
-            <img src='../img/image2vector.svg' alt=''>
-            <h1>Wheryz</h1>
+            <img src='../img/image2vector.svg' alt='Wheryz'>
+            <h1 id='wheryz'>Wheryz</h1>
         </div>
         <div class='search-box'>
             <form action='../connection/finder.php' method='post'>
-                <label for='busqueda'></label>
-                <input type='text' id='busqueda' name='busqueda' class='search-input' placeholder='Búsqueda . . .' require>
-                <button type='submit' style='background: transparent; border:none;'>
-                    <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg==' alt=''>
-                </button>
+                <div class='buscador'>
+                    <input type='text' id='busqueda' name='busqueda' class='search-input' placeholder='Búsqueda . . .' require>
+                    <button type='submit' class='buscar'>
+                        <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg==' alt=''>
+                    </button>
+                </div>
             </form>
         </div>
       </nav>
