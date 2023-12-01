@@ -1,5 +1,4 @@
 <?php
-
 $servername = "localhost";
 $username = "administradores";
 $password = "496094";
@@ -11,14 +10,11 @@ if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
 
-
 $busqueda = $_POST['busqueda'];
-
 
 $sql = "SELECT * FROM tb_colaborador WHERE lastname LIKE '%$busqueda%' OR username LIKE '%$busqueda%'";
 $result = $conn->query($sql);
 
-// Mostrar los resultados
 echo "
 <!DOCTYPE html>
 <html lang='es'>
@@ -27,13 +23,13 @@ echo "
     <title>Wheryz | Inicio</title>
     <meta name='description' content=''>
     <meta name='viewport' content'' width=device-width, initial-scale=1'>
-
+    <link rel='shortcut icon' href='../img/image2vector.svg' type='image/x-icon'>
+    <!--CSS GENERAL-->
     <link rel='stylesheet' href='../css/nav.css'>
     <link rel='stylesheet' href='../css/finder.css'>
-
-
-    <link rel='shortcut icon' href='../img/image2vector.svg' type='image/x-icon'>
-
+    <!--CSS DE RESULTADOS-->
+    <link rel='stylesheet' href='../css/resultados.css'>
+    <!--JS GENERAL-->
     <script src='../js/nav.js'></script>
     <script src='../js/finder.js'></script>
 </head>
@@ -134,8 +130,8 @@ echo "
         </div>
       </nav>
       <!--Contenido-->
+        <h2 class='result-title'>Resultados de la búsqueda:</h2>
 ";
-echo "<h2 class='result-title'>Resultados de la búsqueda:</h2>";
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
@@ -149,6 +145,5 @@ echo "
 </body>
 </html>
 ";
-// Cerrar la conexión a la base de datos
 $conn->close();
 ?>

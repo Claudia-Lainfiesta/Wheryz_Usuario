@@ -15,14 +15,11 @@ if (!isset($_SESSION['active'])) {
     <!--CSS GENERAL-->
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/finder.css">
-    <!--CSS SOLO DE INICIO-->
-    <link rel="stylesheet" href="css/inicio.css">
-    <link rel="stylesheet" href="css/ol.css ">
-    <!--JS GENERAK-->
+    <!--CSS SOLO DE COLABORADOR-->
+    <link rel="stylesheet" href="css/colaborador.css">
+    <!--JS GENERAL-->
     <script src="js/nav.js"></script>
-    <!--CSS SOLO DE INICIO-->
-    <script type="text/javascript" src="js/mapa.js"></script>
-    <script type="text/javascript" src="js/ol.js"></script>
+    <!--CSS SOLO DE COLABORADOR-->
 </head>
 <body>
 <!--Navbar principal/CSS y JS=nav-->
@@ -103,7 +100,7 @@ if (!isset($_SESSION['active'])) {
     </nav>
 </header>
 <main>
-    <!--Buscador/CSS=finder-->
+    <!--Buscador/CSS y PHP=finder-->
     <nav class="search">
         <div class="logo-wheryz">
             <img src="img/image2vector.svg" alt="Wheryz">

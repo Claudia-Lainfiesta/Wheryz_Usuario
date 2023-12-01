@@ -1,0 +1,10 @@
+.result-title
+{
+    font-size: 30px;
+    margin: 2.5% 0% 0% 5%;
+}
+.result-item
+{
+    margin: 2% 5%;
+    border-top: solid 1px #333;
+}

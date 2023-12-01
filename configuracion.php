@@ -6,16 +6,16 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#35155d">
-
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/configuracion.css">
-
     <link rel="shortcut icon" href="img/image2vector.svg" type="image/x-icon">
-
+    <!--CSS GENERAL-->
+    <link rel="stylesheet" href="css/nav.css">
+    <!--CSS CONFIGURACIONES-->
+    <link rel="stylesheet" href="css/configuracion.css">
+    <!--JS GENERAL-->
     <script src="js/nav.js"></script>
+    <!--JS CONFIGURACIONES-->
     <script src="js/configuracion.js"></script>
-
-
+    <script src="js/edicion.js"></script>
 </head>
 <body>
 <!--Navbar principal/CSS y JS=nav-->
@@ -95,7 +95,7 @@
         </ul>
     </nav>
 </header>
-<!--Contenido-->
+<!--Contenido/ JS = CONFIGURACION (cambio de foto) y EDICION (editar campos)-->
 <main class="form-config">
     <h2>Configuración</h2>
     <a onclick="open_change_image()">
@@ -164,45 +164,5 @@
       <button>Guardar</button>
     </form>
   </main>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Obtén todas las etiquetas <a> que contienen las imágenes de edición
-      var editLinks = document.querySelectorAll("a.edit-link");
-  
-      // Agrega un evento clic a cada enlace de edición
-      editLinks.forEach(function(link) {
-        link.addEventListener("click", function(event) {
-          event.preventDefault(); // Evita que el enlace se comporte como un enlace normal
-  
-          // Habilita la edición del campo asociado al enlace
-          var inputField = link.parentNode.querySelector("input");
-          inputField.removeAttribute("disabled");
-        });
-      });
-    });
-    document.addEventListener("DOMContentLoaded", function() {
-    // Llamada a tu archivo PHP para obtener datos del usuario
-    // Reemplaza 'obtenerDatosUsuario' con tu propia lógica para obtener datos del usuario
-    fetch('obtenerDatosUsuario.php')
-        .then(response => response.json())
-        .then(data => cargarDatosEnFormulario(data))
-        .catch(error => console.error('Error al obtener datos del usuario:', error));
-});
-
-function cargarDatosEnFormulario(datosUsuario) {
-    // Obtener referencias a los elementos del formulario
-    var nameInput = document.getElementById('name');
-    var lastnameInput = document.getElementById('lastname');
-    var userInput = document.getElementById('user');
-    var emailInput = document.getElementById('email');
-
-    // Asignar los valores de la base de datos a los campos del formulario
-    nameInput.value = datosUsuario.name;
-    lastnameInput.value = datosUsuario.lastname;
-    userInput.value = datosUsuario.user;
-    emailInput.value = datosUsuario.email;
-}
-  </script>
-  
 </body>
 </html>

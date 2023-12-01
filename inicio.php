@@ -103,7 +103,7 @@ if (!isset($_SESSION['active'])) {
     </nav>
 </header>
 <main>
-    <!--Buscador/CSS=finder-->
+    <!--Buscador/CSS y PHP=finder-->
     <nav class="search">
         <div class="logo-wheryz">
             <img src="img/image2vector.svg" alt="Wheryz">
