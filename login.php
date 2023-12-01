@@ -2,15 +2,25 @@
 include 'connection/querys.php';
 
 if (!empty($_POST)) {
-    if (
-        !empty($_POST['user']) &&
-        !empty($_POST["password"])
-    ) {
-        $user = $_POST['user'];
-        $password = $_POST['password'];
+  if (
+    !empty($_POST['user']) &&
+    !empty($_POST["password"])
+  ) {
+    $user = $_POST['user'];
+    $password = $_POST['password'];
 
-        login($user, $password);
+    if (login($user, $password)) {
+      echo '<script type="text/javascript">
+                    alert("Usuario y contraseña correcta");
+                    window.location.href="inicio.php";
+                </script>';
+    } else {
+      echo '<script type="text/javascript">
+                    alert("Usuario o contraseña incorrectos");
+                    window.location.href="login.php";
+                </script>';
     }
+  }
 }
 ?>
 <!DOCTYPE html>

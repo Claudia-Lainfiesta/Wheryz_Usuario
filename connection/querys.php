@@ -19,8 +19,6 @@ function login($user, $password)
         $_SESSION['active'] = true;
         $_SESSION['id'] = $query_array[0];
         header('Location: inicio.php');
-    } else {
-        session_destroy();
     }
 }
 

@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['active'])) {
+  header('Location: login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -109,10 +115,13 @@
             <h1>Wheryz</h1>
         </div>
         <div class="search-box">
-            <input type="search" class="search-input" placeholder="Búsqueda. . . " >
-            <a class="search-btn" href="#">
-              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg==" alt="">
-            </a>
+            <form action="connection/finder.php" method="post">
+                <label for="busqueda"></label>
+                <input type="text" id="busqueda" name="busqueda" class="search-input" placeholder="Búsqueda . . ." require>
+                <button type="submit" class="search-btn">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg==" alt="">
+                </button>
+            </form>
         </div>
       </nav>
       <!--Contenido-->

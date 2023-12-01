@@ -180,6 +180,28 @@
         });
       });
     });
+    document.addEventListener("DOMContentLoaded", function() {
+    // Llamada a tu archivo PHP para obtener datos del usuario
+    // Reemplaza 'obtenerDatosUsuario' con tu propia lógica para obtener datos del usuario
+    fetch('obtenerDatosUsuario.php')
+        .then(response => response.json())
+        .then(data => cargarDatosEnFormulario(data))
+        .catch(error => console.error('Error al obtener datos del usuario:', error));
+});
+
+function cargarDatosEnFormulario(datosUsuario) {
+    // Obtener referencias a los elementos del formulario
+    var nameInput = document.getElementById('name');
+    var lastnameInput = document.getElementById('lastname');
+    var userInput = document.getElementById('user');
+    var emailInput = document.getElementById('email');
+
+    // Asignar los valores de la base de datos a los campos del formulario
+    nameInput.value = datosUsuario.name;
+    lastnameInput.value = datosUsuario.lastname;
+    userInput.value = datosUsuario.user;
+    emailInput.value = datosUsuario.email;
+}
   </script>
   
 </body>
