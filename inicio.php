@@ -11,22 +11,18 @@ if (!isset($_SESSION['active'])) {
     <title>Wheryz | Inicio</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#35155d">
-
+    <link rel="shortcut icon" href="img/image2vector.svg" type="image/x-icon">
+    <!--CSS GENERAL-->
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/finder.css">
+    <!--CSS SOLO DE INICIO-->
     <link rel="stylesheet" href="css/inicio.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/ol.css ">
-
-    <link rel="shortcut icon" href="img/image2vector.svg" type="image/x-icon">
-
+    <!--JS GENERAK-->
     <script src="js/nav.js"></script>
-    <script src="js/finder.js"></script>
+    <!--CSS SOLO DE INICIO-->
     <script type="text/javascript" src="js/mapa.js"></script>
     <script type="text/javascript" src="js/ol.js"></script>
-
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 </head>
 <body>
 <!--Navbar principal/CSS y JS=nav-->
@@ -47,7 +43,7 @@ if (!isset($_SESSION['active'])) {
             </li>
         </ul>
 
-        <img src="img/image2vector.svg" alt="logo" id="titulo" style="width: 50%; margin-left: 10%;">
+        <img src="img/image2vector.svg" alt="logo" id="titulo" style="width: 50%; margin-left: 20%; margin-bottom:3%; margin-top:3%;">
 
         <ul>
             <li>
@@ -107,20 +103,20 @@ if (!isset($_SESSION['active'])) {
     </nav>
 </header>
 <main>
-    <!--Busacador/CSS y JS=finder-->
-
+    <!--Buscador/CSS=finder-->
     <nav class="search">
         <div class="logo-wheryz">
-            <img src="img/image2vector.svg" alt="">
-            <h1>Wheryz</h1>
+            <img src="img/image2vector.svg" alt="Wheryz">
+            <h1 id="wheryz">Wheryz</h1>
         </div>
         <div class="search-box">
             <form action="connection/finder.php" method="post">
-                <label for="busqueda"></label>
-                <input type="text" id="busqueda" name="busqueda" class="search-input" placeholder="Búsqueda . . ." require>
-                <button type="submit" class="search-btn">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg==" alt="">
-                </button>
+                <div class="buscador">
+                    <input type="text" id="busqueda" name="busqueda" class="search-input" placeholder="Búsqueda . . ." require>
+                    <button type="submit" class="buscar">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg==" alt="">
+                    </button>
+                </div>
             </form>
         </div>
       </nav>
@@ -140,9 +136,8 @@ if (!isset($_SESSION['active'])) {
         <div>
             <div class="square" id="mapa2">
                 <div class="row">
-                    
                     <div class="col-12">
-                        <div id="mapa" style="min-height: 500; height: 100px;"></div>
+                        <div id="mapa" style="min-height: 500; height: 150px;"></div>
                     </div>
                 </div>
             </div>

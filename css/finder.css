@@ -8,55 +8,79 @@
     --morado5: #E2D9FB;
     --morado6: #F0EAFD;
 }
-
 .search
 {
     display: flex;
+    width: 100%;
+    height: 20%;
+    justify-content: center;
     align-items: center;
 }
+/*logo*/
 .logo-wheryz
 {
     width: 30%;
     display: flex;
     align-items: center;
-    padding-left: 5%;
-    padding-top: 1%;
+    justify-content: center;
+    padding: 2%;
 }
 .logo-wheryz img
 {
-    width: 35%;
+    width: 40%;
 }
-.logo-wheryz h1
+.logo-wheryz #wheryz
 {
     font-family: "Satisfy", cursive;
     font-size: 60px;
 }
+
+/*Buscador*/
 .search-box
 {
-    align-items: center;
     width: 70%;
-    width: 55%;
-    margin: 5%;
-    padding: 1% 1%;
-    border-radius: 70px;
-    background-color: var(--morado2);
+    justify-content: center;
+    align-items: center;
 }
-.search-box input
+.search-box form
 {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.buscador
+{
+    width: 92%;
+    height: 41px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: var(--morado1);
+    border-radius: 40px;
+}
+.search-input
+{
+    width: 90%;
+    padding-left: 3%;
+    outline: none;
     background: transparent;
     border: none;
-    width: 92%;
     color: var(--morado5);
-    outline: none;
+    font-size: 20px;
+
 }
+.buscar
+{
+    background-color: transparent;
+    border: none;
+    width: 5%;
+    height: 100%;
+}
+
+
 ::placeholder
 {
     color: var(--morado4);
-}
-.search-box button
-{
-    background: transparent;
-    border: none;
 }
   @media only screen and (max-width: 1050px) {
     .search {

@@ -33,6 +33,14 @@
     width: 90%;
     margin-top: 0;
 }
+#recommendations
+{
+    margin-right: 1.5%;
+}
+#offers
+{
+    margin-left: 1.5%;
+}
 @media only screen and (max-width: 900px)
 {
     .mini-content
