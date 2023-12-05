@@ -19,7 +19,7 @@ if (!isset($_SESSION['active'])) {
     <link rel="stylesheet" href="css/colaborador.css">
     <!--JS GENERAL-->
     <script src="js/nav.js"></script>
-    <!--CSS SOLO DE COLABORADOR-->
+    <!--JS SOLO DE COLABORADOR-->
 </head>
 <body>
 <!--Navbar principal/CSS y JS=nav-->
@@ -109,7 +109,7 @@ if (!isset($_SESSION['active'])) {
         <div class="search-box">
             <form action="connection/finder.php" method="post">
                 <div class="buscador">
-                    <input type="text" id="busqueda" name="busqueda" class="search-input" placeholder="Búsqueda . . ." require>
+                    <input type="text" id="busqueda" name="busqueda" class="search-input" placeholder="Búsqueda . . ." autocomplete="off"  require>
                     <button type="submit" class="buscar">
                         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg==" alt="">
                     </button>
@@ -119,7 +119,25 @@ if (!isset($_SESSION['active'])) {
       </nav>
       <!--Contenido-->
       <div class="content">
-
+        <div class="mini-content">
+            <h2>Normas para formar parte de nuestros colaboradores</h2>
+            <ul class="normas">
+                <li>Las empresas deben proporcionar información completa y verificable durante el registro.</li>
+                <li>Las propiedades deben cumplir con estándares mínimos de calidad y limpieza.</li>
+                <li>Cumplir con las políticas de cancelación establecidas en la plataforma.</li>
+                <li>Responder a las consultas y solicitudes de los huéspedes dentro de un plazo establecido.</li>
+                <li>Realizar limpiezas regulares y abordar problemas de mantenimiento de manera oportuna.</li>
+                <li>Cumplir con las normas de seguridad locales y comunicar procedimientos de seguridad.</li>
+                <li>Pagar tarifas y comisiones según los términos acordados.</li>
+                <li>No permitir discriminación y practicar el uso justo de la plataforma.</li>
+                <li>Proveer un canal de comunicación para resolver problemas y quejas.</li>
+                <li>Sujetarse a revisiones periódicas para evaluar el cumplimiento de normas y recibir retroalimentación.</li>
+            </ul>
+            <br>
+            <center>
+                <a href="#"><button>Ser colaborador</button></a>
+            </center>
+        </div>
       </div>
 </main>
 </body>

@@ -46,3 +46,23 @@ function name($id)
 
     return $query_array[0];
 }
+// En tu archivo de conexión (por ejemplo, connection.php)
+function obtenerInformacionUsuario($id)
+{
+    $connection = connection(); // Asegúrate de tener esta función en tu archivo de conexión
+    $query = mysqli_query($connection, "SELECT * FROM tb_usuario WHERE id = '$id'");
+    
+    if (!$query) {
+        // Manejar el error de la consulta si es necesario
+        die("Error al obtener información del usuario: " . mysqli_error($connection));
+    }
+
+    // Obtener el resultado como un array asociativo
+    $user_info = mysqli_fetch_assoc($query);
+
+    // Liberar recursos y cerrar la conexión
+    mysqli_free_result($query);
+    mysqli_close($connection);
+
+    return $user_info;
+}

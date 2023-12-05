@@ -135,8 +135,9 @@ echo "
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "<div class='result-item'> Nombre: " . $row['name'] . "<br>Usuario: " . $row['username'] . "</div>";
+        echo "<div class='result-item' data-id='" . $row['id'] . "'> Nombre: " . $row['name'] . "<br>Usuario: " . $row['username'] . " <span class='icono-favorito' onclick='marcarFavorito(this)' data-id='" . $row['id'] . "'>❤️</span></div>";
     }
+
 } else {
     echo "<p class='no-results'>No se encontraron resultados.</p>";
 }

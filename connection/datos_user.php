@@ -1,39 +1,41 @@
 <?php
-// Configura la conexión a la base de datos
-$servername = "localhost"; // Cambia esto con tu servidor de base de datos
-$username = "administradores"; // Cambia esto con tu nombre de usuario de base de datos
-$password = "496094"; // Cambia esto con tu contraseña de base de datos
-$dbname = "db_wheryz"; // Cambia esto con el nombre de tu base de datos
+session_start();
 
-// Crea la conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verifica la conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+if (!isset($_SESSION['active'])) {
+    header('Location: ../index.php');
+    exit();
 }
 
-// Supongamos que el usuario ha iniciado sesión y tienes su ID de usuario
-$user_id = 1; // Reemplaza esto con el ID de usuario real, que deberías obtener después del inicio de sesión
+include('../connection/querys.php'); // Reemplaza con la ruta correcta
 
-// Consulta para obtener los datos del usuario
-$sql = "SELECT * FROM tb_usuario WHERE id = $user_id";
-$result = $conn->query($sql);
+$id = $_SESSION['id'];
+$user_info = obtenerInformacionUsuario($id); // Crea esta función en tu archivo de conexión
 
-// Verifica si se obtuvieron resultados
-if ($result->num_rows > 0) {
-    // Si hay resultados, obtén la fila como un array asociativo
-    $row = $result->fetch_assoc();
+// En tu archivo datos_user.php
+session_start();
 
-    // Ahora, asigna los valores a las variables que usarás en el formulario HTML
-    $name = $row["name"];
-    $lastname = $row["lastname"];
-    $user = $row["user"];
-    $email = $row["email"];
-} else {
-    echo "No se encontraron resultados para el usuario con ID $user_id";
+if (!isset($_SESSION['active'])) {
+    header('Location: ../index.php');
+    exit();
 }
 
-// Cierra la conexión a la base de datos
-$conn->close();
+include('tu_archivo_de_conexion.php'); // Reemplaza con la ruta correcta
+
+$id = $_SESSION['id'];
+$user_info = obtenerInformacionUsuario($id);
+
+// ...
+
+// Renderizar los valores en los campos del formulario
+$name = $user_info['name'];
+$lastname = $user_info['lastname'];
+$username = $user_info['username'];
+$email = $user_info['email'];
+
+
+// Renderiza los valores en los campos del formulario
+$name = $user_info['name'];
+$lastname = $user_info['lastname'];
+$username = $user_info['username'];
+$email = $user_info['email'];
 ?>

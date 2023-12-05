@@ -1,0 +1,62 @@
+:root
+{
+    --morado0: #35155D;
+    --morado1: #8D46E1;
+    --morado2: #9B66EC;
+    --morado3: #B492F3;
+    --morado4: #CDBAF8;
+    --morado5: #E2D9FB;
+    --morado6: #F0EAFD;
+}
+.content
+{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+.mini-content
+{
+    border: 1px solid var(--morado4);
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px var(--morado5);
+    width: 90%;
+    padding: 2% 5%;
+    margin: 5%;
+    margin-top: 2%;
+    justify-content: center;
+    align-items: center;
+}
+.mini-content a
+{
+    text-decoration: none;
+}
+.mini-content button
+{
+    text-align: center;
+    justify-content: center;
+    background-color: var(--morado1);
+    border: none;
+    padding: 0.8% 2%;
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    transition: 0.5s;
+}
+
+.mini-content button:hover
+{
+    border: solid 1px var(--morado1);
+    background-color: #fff;
+    color: var(--morado1);
+    transition: 0.5s;
+}
+.normas
+{
+    list-style-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM5QjY2RUMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaGVjay1jaXJjbGUiPjxwYXRoIGQ9Ik0yMiAxMS4wOFYxMmExMCAxMCAwIDEgMS01LjkzLTkuMTQiLz48cGF0aCBkPSJtOSAxMSAzIDNMMjIgNCIvPjwvc3ZnPg==);
+    align-items: center;
+}
+.normas li
+{
+    margin-top: 0.5%;
+}

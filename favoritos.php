@@ -20,6 +20,7 @@ if (!isset($_SESSION['active'])) {
     <!--JS GENERAL-->
     <script src="js/nav.js"></script>
     <!--CSS SOLO DE FAVORITOS-->
+    <script src="js/favoritos.js"></script>
 </head>
 <body>
 <!--Navbar principal/CSS y JS=nav-->
@@ -109,7 +110,7 @@ if (!isset($_SESSION['active'])) {
         <div class="search-box">
             <form action="connection/finder.php" method="post">
                 <div class="buscador">
-                    <input type="text" id="busqueda" name="busqueda" class="search-input" placeholder="Búsqueda . . ." require>
+                    <input type="text" id="busqueda" name="busqueda" class="search-input" placeholder="Búsqueda . . ." autocomplete="off"  require>
                     <button type="submit" class="buscar">
                         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg==" alt="">
                     </button>
@@ -118,6 +119,74 @@ if (!isset($_SESSION['active'])) {
         </div>
       </nav>
       <!--Contenido-->
+      <script>
+    function marcarFavorito(element) {
+        // Obtener el ID del usuario desde el atributo data-id
+        var userId = element.getAttribute('data-id');
+
+        // Realizar una solicitud AJAX para enviar los datos a favoritos.php
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                // Manejar la respuesta si es necesario
+                console.log(this.responseText);
+            }
+        };
+        
+        // Especificar la URL de favoritos.php y los datos a enviar
+        xhttp.open("POST", "../connection/favoritos.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("user_id=" + userId);
+
+        // Cambiar el estado del corazón al hacer clic
+        if (element.classList.contains('marcado')) {
+            element.classList.remove('marcado');
+        } else {
+            element.classList.add('marcado');
+        }
+    }
+</script>
+<?php
+// favoritos.php
+
+$servername = "localhost";
+$username = "administradores";
+$password = "496094";
+$dbname = "db_wheryz";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $userId = $_POST['user_id'];
+
+    // Verificar si el usuario ya está en la lista de favoritos
+    $sqlCheck = "SELECT * FROM tb_colaboradores WHERE user_id = $userId";
+    $resultCheck = $conn->query($sqlCheck);
+
+    if ($resultCheck->num_rows > 0) {
+        // Si el usuario ya está en la lista, eliminarlo
+        $sqlDelete = "DELETE FROM tb_colaboradores WHERE user_id = $userId";
+        $conn->query($sqlDelete);
+        echo "Usuario eliminado de la lista de favoritos";
+    } else {
+        // Si el usuario no está en la lista, agregarlo
+        $sqlInsert = "INSERT INTO tb_colaboradores (user_id) VALUES ($userId)";
+        $conn->query($sqlInsert);
+        echo "Usuario agregado a la lista de favoritos";
+    }
+} else {
+    // Si la solicitud no es de tipo POST, devolver un error
+    echo "Error en la solicitud";
+}
+
+$conn->close();
+?>
+
+
       <div class="content">
         
       </div>

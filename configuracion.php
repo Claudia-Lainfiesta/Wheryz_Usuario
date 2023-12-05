@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['active'])) {
+  header('Location: login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -116,13 +122,13 @@
         </form>
       </div>
     </div>
-    <form action="datos_user.php" method="post" class="datos">
+    <form action="connection/actualizar_datos.php" method="post" class="datos">
       <label for="name">
         <span>
           Nombre:
         </span>
         <div>
-          <input id="name" name="name" type="text" placeholder="Nombre" disabled>
+          <input id="name" name="name" type="text" placeholder="Nombre" value="<?php echo $name; ?>" disabled>
           <a href="" class="edit-link">
             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1wZW4tbGluZSI+PHBhdGggZD0iTTEyIDIwaDkiLz48cGF0aCBkPSJNMTYuNSAzLjVhMi4xMiAyLjEyIDAgMCAxIDMgM0w3IDE5bC00IDEgMS00WiIvPjwvc3ZnPg==" alt="Edit button">
           </a>
@@ -164,5 +170,18 @@
       <button>Guardar</button>
     </form>
   </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('.edit-link').forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                var inputField = this.parentNode.querySelector('input');
+                inputField.removeAttribute('disabled');
+                inputField.focus();
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
