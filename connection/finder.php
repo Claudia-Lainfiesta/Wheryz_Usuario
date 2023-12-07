@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "administradores";
-$password = "496094";
+$username = "root";
+$password = "";
 $dbname = "db_wheryz";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 
 $busqueda = $_POST['busqueda'];
 
-$sql = "SELECT * FROM tb_colaborador WHERE lastname LIKE '%$busqueda%' OR username LIKE '%$busqueda%'";
+$sql = "SELECT * FROM tb_colaborador WHERE nombre_compañía LIKE '%$busqueda%' OR nombre_usuario LIKE '%$busqueda%'";
 $result = $conn->query($sql);
 
 echo "
@@ -23,7 +23,7 @@ echo "
     <title>Wheryz | Inicio</title>
     <meta name='description' content=''>
     <meta name='viewport' content'' width=device-width, initial-scale=1'>
-    <link rel='shortcut icon' href='../img/image2vector.svg' type='image/x-icon'>
+    <link rel='shortcut icon' href='../img/logo.jpg' type='image/x-icon'>
     <!--CSS GENERAL-->
     <link rel='stylesheet' href='../css/nav.css'>
     <link rel='stylesheet' href='../css/finder.css'>
@@ -52,7 +52,7 @@ echo "
             </li>
         </ul>
 
-        <img src='../img/image2vector.svg' alt='logo' id='titulo' style='width: 50%; margin-left: 10%;'>
+        <img src='../img/logo.jpg' alt='logo' id='titulo' style='width: 50%; margin-left: 10%;'>
 
         <ul>
             <li>
@@ -131,14 +131,13 @@ echo "
       <!--Contenido-->
         <h2 class='result-title'>Resultados de la búsqueda:</h2>
 ";
-
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "
-            <a style='text-decoration:none;color:#000;' href='colaboradorid.php?id=" . $row['id'] . "'>
-                <div class='result-item' data-id='" . $row['id'] . "'> 
-                    Nombre: " . $row['name'] . "<br>
-                    Dirección: " . $row['username'] . " 
+            <a style='text-decoration:none;color:#000;' href='colaboradorid.php?id=" . $row['id_colaborador'] . "'>
+                <div class='result-item' data-id='" . $row['id_colaborador'] . "'>
+                    Nombre: " . $row['nombre_compañía'] . "<br>
+                    Dirección: " . $row['dirección'] . "
                 </div>
             </a>";
     }

@@ -3,13 +3,13 @@ include 'connection/querys.php';
 
 if (!empty($_POST)) {
   if (
-    !empty($_POST['user']) &&
-    !empty($_POST["password"])
+    !empty($_POST['nombre_usuario']) &&
+    !empty($_POST["contraseña"])
   ) {
-    $user = $_POST['user'];
-    $password = $_POST['password'];
+    $nombre_usuario = $_POST['nombre_usuario'];
+    $contraseña = $_POST['contraseña'];
 
-    if (login($user, $password)) {
+    if (login($nombre_usuario, $contraseña)) {
       echo '<script type="text/javascript">
                     alert("Usuario y contraseña correcta");
                     window.location.href="inicio.php";
@@ -44,8 +44,7 @@ if (!empty($_POST)) {
     </nav>
         <nav class="navbar">
             <div class="brand-title">
-                <img src="img/image2vector.svg" alt="">
-                <h1>Wheryz</h1>
+                <img src="img/logo-extendido.jpg" alt="">
             </div>
             <a href="#" class="toggle-button">
               <span class="bar"></span>
@@ -64,19 +63,19 @@ if (!empty($_POST)) {
     <div class="container">
         <div class="mini-container">
             <div class="titulo">
-                <img src="img/image2vector.svg" alt="">
+                <img src="img/logo.jpg" alt="">
                 <h2>Iniciar Sesión</h2>
             </div>
             <form method="post">
                 <div class="datos">
-                    <label for="user">Nombre de usuario</label>
+                    <label for="nombre_usuario">Nombre de usuario</label>
                     <br>
-                    <input type="text" name="user" id="user">
+                    <input type="text" name="nombre_usuario" id="nombre_usuario">
                 </div>
                 <div class="datos">
-                    <label for="password">Contraseña</label>
+                    <label for="contraseña">Contraseña</label>
                     <br>
-                    <input type="password" name="password" id="password">
+                    <input type="password" name="contraseña" id="contraseña">
                 </div>
                 <button type="submit" value="Iniciar Sesión">Iniciar Sesión</button>
             </form>

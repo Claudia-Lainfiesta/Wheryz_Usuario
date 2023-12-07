@@ -43,7 +43,7 @@ if (!isset($_SESSION['active'])) {
             </li>
         </ul>
 
-        <img src="img/image2vector.svg" alt="logo" id="titulo" style="width: 50%; margin-left: 20%; margin-bottom:3%; margin-top:3%;">
+        <img src="img/logo.jpg" alt="logo" id="titulo" style="width: 50%; margin-left: 20%; margin-bottom:3%; margin-top:3%;">
 
         <ul>
             <li>
@@ -124,11 +124,13 @@ if (!isset($_SESSION['active'])) {
         <div class="mini-content">
             <div id="recommendations" class="square">
                 <h3>Recomendaciones</h3>
-                <iframe src="https://mazdaguatemala.com/" frameborder="0" style="width: 100%;"></iframe>
+                <br>
+                <iframe src="https://mazdaguatemala.com/" frameborder="0" style="width: 100%; height: 80%;"></iframe>
             </div>
             <div id="offers" class="square">
                 <h3>Ofertas</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum libero reprehenderit quod mollitia quidem rem vero quae temporibus perspiciatis, provident magni illo distinctio maiores molestias, eos rerum ipsum quas. Ad.</p>
+                <br>
+                <img src="img/banners2.jpg" alt="" style="width: 100%;">
             </div>
         </div>
         <div>

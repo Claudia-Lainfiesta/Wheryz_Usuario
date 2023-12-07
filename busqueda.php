@@ -11,7 +11,7 @@ if (!isset($_SESSION['active'])) {
     <title>Wheryz | Búsqueda</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="img/image2vector.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon">
     <!--CSS GENERAL-->
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/finder.css">
@@ -40,7 +40,7 @@ if (!isset($_SESSION['active'])) {
             </li>
         </ul>
 
-        <img src="img/image2vector.svg" alt="logo" id="titulo" style="width: 50%; margin-left: 20%; margin-bottom:3%; margin-top:3%;">
+        <img src="img/logo.jpg" alt="logo" id="titulo" style="width: 50%; margin-left: 20%; margin-bottom:3%; margin-top:3%;">
 
         <ul>
             <li>

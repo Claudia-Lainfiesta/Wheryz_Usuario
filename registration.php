@@ -1,23 +1,3 @@
-<?php
-include 'connection/querys.php';
-if (!empty($_POST)) {
-    if (
-        !empty($_POST['name']) &&
-        !empty($_POST['lastname']) &&
-        !empty($_POST['user']) &&
-        !empty($_POST['email']) &&
-        !empty($_POST['password'])
-    ) {
-        $name = $_POST['name'];
-        $lastname = $_POST['lastname'];
-        $user = $_POST['user'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        register($name, $lastname, $user, $email, $password);
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -39,8 +19,7 @@ if (!empty($_POST)) {
     </nav>
         <nav class="navbar">
             <div class="brand-title">
-                <img src="img/image2vector.svg" alt="">
-                <h1>Wheryz</h1>
+                <img src="img/logo-extendido.jpg" alt="">
             </div>
             <a href="#" class="toggle-button">
               <span class="bar"></span>
@@ -59,34 +38,44 @@ if (!empty($_POST)) {
     <div class="container">
         <div class="mini-container">
             <div class="titulo">
-                <img src="img/image2vector.svg" alt="">
+                <img src="img/logo.jpg" alt="">
                 <h2>Registrar</h2>
             </div>
             <form method="Post">
                 <div class="datos">
-                    <label for="name">Nombre</label>
+                    <label for="nombre">Nombre</label>
                     <br>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="nombre" id="nombre" required>
                 </div>
                 <div class="datos">
-                    <label for="">Apellido</label>
+                    <label for="apellido">Apellido</label>
                     <br>
-                    <input type="text" name="lastname" id="lastname">
+                    <input type="text" name="apellido" id="apellido" required>
                 </div>
                 <div class="datos">
-                    <label for="">Nombre de usuario</label>
+                    <label for="nombre_usuario">Nombre de usuario</label>
                     <br>
-                    <input type="text" name="user" id="user">
+                    <input type="text" name="nombre_usuario" id="nombre_usuario" required>
                 </div>
                 <div class="datos">
-                    <label for="">Correo Electrónico</label>
+                    <label for="correo_electrónico">Correo Electrónico</label>
                     <br>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="correo_electrónico" id="correo_electrónico" required>
                 </div>
                 <div class="datos">
-                    <label for="">Contraseña</label>
+                    <label for="teléfono">Teléfono</label>
                     <br>
-                    <input type="password" name="password" id="password">
+                    <input type="number" name="teléfono" id="teléfono" required>
+                </div>
+                <div class="datos">
+                    <label for="contraseña">Contraseña</label>
+                    <br>
+                    <input type="password" name="contraseña" id="contraseña" required>
+                </div>
+                <div class="datos">
+                    <label for="confirmar_contraseña">Confirmar contraseña</label>
+                    <br>
+                    <input type="password" name="confirmar_contraseña" id="confirmar_contraseña" required>
                 </div>
                 <button type="submit" value="Registrarse">Ingresar</button>
             </form>
@@ -94,3 +83,46 @@ if (!empty($_POST)) {
     </div>
 </body>
 </html>
+<?php
+include 'connection/querys.php';
+
+if (!empty($_POST)) {
+  if (
+    !empty($_POST['nombre']) &&
+    !empty($_POST['apellido']) &&
+    !empty($_POST['nombre_usuario']) &&
+    !empty($_POST['correo_electrónico']) &&
+    !empty($_POST['teléfono']) &&
+    !empty($_POST['contraseña']) &&
+    !empty($_POST['confirmar_contraseña'])
+  ) {
+    // Comprobara la contraseña
+    if ($_POST['contraseña'] == $_POST['confirmar_contraseña']) {
+      $nombre = $_POST['nombre'];
+      $apellido = $_POST['apellido'];
+      $nombre_usuario = $_POST['nombre_usuario'];
+      $correo_electrónico = $_POST['correo_electrónico'];
+      $teléfono = $_POST['teléfono'];
+      $contraseña = $_POST['contraseña'];
+
+      register(
+        $nombre,
+        $apellido,
+        $nombre_usuario,
+        $correo_electrónico,
+        $teléfono,
+        $contraseña
+      );
+
+      echo '<script type="text/javascript">
+                    alert("Usuario registrado correctamente");
+                    window.location.href="login.php";
+                </script>';
+    } else {
+      echo '<script type="text/javascript">
+                    alert("Las contraseñas no coinciden");
+                    window.location.href="register.php";
+                </script>';
+    }
+  }
+}

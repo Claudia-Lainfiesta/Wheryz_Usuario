@@ -13,11 +13,11 @@ const init = () => {
         const coordenadas = ubicacion.coords;
         let { latitude, longitude } = coordenadas;
 
-        const icono = "img/ubicacion.svg";
+        const icono = "img/ubicacion.jpg";
         if (!mapa) {
-            // Primera vez, lo creamos y centramos
+
             mapa = new ol.Map({
-                target: 'mapa', // el id del elemento en donde se monta
+                target: 'mapa',
                 layers: [
                     new ol.layer.Tile({
                         source: new ol.source.OSM()
@@ -36,7 +36,7 @@ const init = () => {
             marcador.setStyle(new ol.style.Style({
                 image: new ol.style.Icon(({
                     src: icono,
-                    scale: 0.5, // Aquí puedes ampliar o disminuir la imagen
+                    scale: 0.5,
                 })),
             }));
             const ultimaCapa = new ol.layer.Vector({
@@ -46,7 +46,7 @@ const init = () => {
             });
             mapa.addLayer(ultimaCapa);
         }
-        // Actualización de ubicación
+
         mapa.getView().setCenter(ol.proj.fromLonLat([longitude, latitude]));
         marcador.getGeometry().setCoordinates(ol.proj.fromLonLat([longitude, latitude]));
         const fecha = formatearFecha(new Date(ubicacion.timestamp));
@@ -61,9 +61,9 @@ const init = () => {
 
 
     const opcionesDeSolicitud = {
-        enableHighAccuracy: true, // Alta precisión
-        maximumAge: 0, // No queremos caché
-        timeout: 5000 // Esperar solo 5 segundos
+        enableHighAccuracy: true,
+        maximumAge: 0,
+        timeout: 5000
     };
 
     idWatcher = navigator.geolocation.watchPosition(onActualizacionDeUbicacion, onErrorDeUbicacion, opcionesDeSolicitud);

@@ -1,66 +1,95 @@
 <?php
 function connection()
 {
-    return @mysqli_connect('localhost', 'administradores', '496094', 'db_wheryz');
+  return @mysqli_connect(
+    'localhost',
+    'root',
+    '',
+    'db_wheryz'
+  );
 }
 
-function login($user, $password)
+function login($nombre_usuario, $contraseña)
 {
-    $connection = connection();
-    $query = mysqli_query($connection, "SELECT id
-                                        FROM tb_usuario 
-                                        WHERE username = '$user' 
-                                        AND password = '$password'");
+  $connection = connection();
+  $query = mysqli_query($connection, "SELECT id_usuario
+                                        FROM tb_usuario
+                                        WHERE nombre_usuario = '$nombre_usuario'
+                                        AND contraseña = '$contraseña'");
+  $query_array = mysqli_fetch_array($query);
 
-    $query_array = mysqli_fetch_array($query);
-
-    if (!empty($query_array)) {
-        session_start();
-        $_SESSION['active'] = true;
-        $_SESSION['id'] = $query_array[0];
-        header('Location: inicio.php');
-    }
+  if (!empty($query_array)) {
+    session_start();
+    $_SESSION['active'] = true;
+    $_SESSION['id'] = $query_array[0];
+    header('Location: inicio.php');
+    return true;
+  } else {
+    session_destroy();
+    return false;
+  }
 }
 
 function logout()
 {
-    session_start();
-    session_destroy();
-    header('Location: ../index.php');
+  session_start();
+  session_destroy();
+  header('Location: ../index.php');
 }
 
-function register($name, $lastname, $username, $email, $password)
-{
+function register(
+  $nombre,
+  $apellido,
+  $nombre_usuario,
+  $correo_electrónico,
+  $teléfono,
+  $contraseña)
+  {
     $connection = connection();
-    mysqli_query($connection, "INSERT INTO tb_usuario (name, lastname, username, email, password) VALUES ('$name', '$lastname', '$username', '$email', '$password')");
-}
+    Mysqli_query(
+        $connection,
+        "INSERT INTO tb_usuario (
+        nombre,
+        apellido,
+        nombre_usuario,
+        correo_electrónico,
+        teléfono,
+        contraseña
+        )
+        VALUES (
+        '$nombre',
+        '$apellido',
+        '$nombre_usuario',
+        '$correo_electrónico',
+        '$teléfono',
+        '$contraseña');
+        "
+    );
+  }
+
 
 function name($id)
 {
-    $connection = connection();
-    $query = mysqli_query($connection, "SELECT name
-                                        FROM tb_usuario
-                                        WHERE id = '$id'");
+$connection = connection();
+   $query = mysqli_query($connection, "SELECT name
+                                       FROM tb_usuario
+                                       WHERE id_usuario = '$id'");
 
     $query_array = mysqli_fetch_array($query);
 
     return $query_array[0];
 }
-// En tu archivo de conexión (por ejemplo, connection.php)
+// busqueda
 function obtenerInformacionUsuario($id)
 {
-    $connection = connection(); // Asegúrate de tener esta función en tu archivo de conexión
+    $connection = connection();
     $query = mysqli_query($connection, "SELECT * FROM tb_usuario WHERE id = '$id'");
-    
     if (!$query) {
-        // Manejar el error de la consulta si es necesario
         die("Error al obtener información del usuario: " . mysqli_error($connection));
     }
 
-    // Obtener el resultado como un array asociativo
     $user_info = mysqli_fetch_assoc($query);
 
-    // Liberar recursos y cerrar la conexión
     mysqli_free_result($query);
     mysqli_close($connection);
 

@@ -11,8 +11,7 @@ if (!isset($_SESSION['active'])) {
     <title>Wheryz | Configuración</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#35155d">
-    <link rel="shortcut icon" href="img/image2vector.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon">
     <!--CSS GENERAL-->
     <link rel="stylesheet" href="css/nav.css">
     <!--CSS CONFIGURACIONES-->
@@ -42,7 +41,7 @@ if (!isset($_SESSION['active'])) {
             </li>
         </ul>
 
-        <img src="img/image2vector.svg" alt="logo" id="titulo" style="width: 50%; margin-left: 10%;">
+        <img src="img/logo.jpg" alt="logo" id="titulo" style="width: 50%; margin-left: 20%; margin-bottom:3%; margin-top:3%;">
 
         <ul>
             <li>
@@ -128,7 +127,7 @@ if (!isset($_SESSION['active'])) {
           Nombre:
         </span>
         <div>
-          <input id="name" name="name" type="text" placeholder="Nombre" value="<?php echo $name; ?>" disabled>
+          <input id="name" name="name" type="text" placeholder="Nombre" disabled>
           <a href="" class="edit-link">
             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1wZW4tbGluZSI+PHBhdGggZD0iTTEyIDIwaDkiLz48cGF0aCBkPSJNMTYuNSAzLjVhMi4xMiAyLjEyIDAgMCAxIDMgM0w3IDE5bC00IDEgMS00WiIvPjwvc3ZnPg==" alt="Edit button">
           </a>
