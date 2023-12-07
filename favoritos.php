@@ -119,6 +119,33 @@ if (!isset($_SESSION['active'])) {
       </nav>
       <!--Contenido-->
       <div class="content">
+      <h1>Colaboradores Favoritos</h1>
+    <table border="1">
+        <tr>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+        </tr>
+        <!-- Aquí se mostrará la información de los colaboradores favoritos -->
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Realiza una solicitud al servidor para obtener la información de los colaboradores favoritos
+            $.ajax({
+                url: 'connection/obtener_favoritos.php', // Reemplaza con la URL de tu script PHP para obtener favoritos
+                type: 'GET',
+                success: function (response) {
+                    // Inserta la información de los colaboradores favoritos en la tabla
+                    $('table').append(response);
+                },
+                error: function (error) {
+                    console.error('Error en la solicitud AJAX: ', error);
+                }
+            });
+        });
+    </script>
       </div>
 </main>
 </body>

@@ -77,7 +77,7 @@
       <div class="container">
         <div class="row">
           <div class="footer-col">
-            <h4>Compania</h4>
+            <h4>Compañía</h4>
             <ul>
               <li><a href="#nosotros">Sobre nosotros</a></li>
               <li><a href="#servicios">Servicios</a></li>

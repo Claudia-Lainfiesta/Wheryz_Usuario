@@ -31,7 +31,6 @@ echo "
     <link rel='stylesheet' href='../css/resultados.css'>
     <!--JS GENERAL-->
     <script src='../js/nav.js'></script>
-    <script src='../js/finder.js'></script>
 </head>
 <body>
 <!--Navbar principal/CSS y JS=nav-->

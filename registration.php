@@ -121,7 +121,7 @@ if (!empty($_POST)) {
     } else {
       echo '<script type="text/javascript">
                     alert("Las contraseñas no coinciden");
-                    window.location.href="register.php";
+                    window.location.href="registration.php";
                 </script>';
     }
   }
