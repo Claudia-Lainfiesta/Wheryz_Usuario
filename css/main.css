@@ -2,7 +2,7 @@
 :root
 {
     --morado0: #35155D;
-    --morado1: #8D46E1;
+    --morado1: #623D8F;
     --morado2: #9B66EC;
     --morado3: #B492F3;
     --morado4: #CDBAF8;
@@ -19,7 +19,35 @@ body {
     background-color: var(--morado1);
     font-family: 'Inter', sans-serif;
 }
-
+.options
+{
+    width: 100%;
+    height: 50px;
+    align-items: center;
+}
+.options ul
+{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.options ul li{
+    margin: 0% 1%;
+}
+.options a
+{
+    text-decoration: none;
+    color: var(--morado5);
+}
+.active2
+{
+    border-bottom: solid 1.5px var(--morado2);
+}
+.options li:hover
+{
+    border-bottom: solid 1.5px var(--morado4);
+}
 .navbar {
     display: flex;
     position: relative;
@@ -37,7 +65,7 @@ body {
 }
 .brand-title img
 {
-    width: 20%;
+    width: 25%;
 }
 .navbar-links {
     height: 100%;

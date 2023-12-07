@@ -1,7 +1,7 @@
 :root
 {
     --morado0: #35155D;
-    --morado1: #8D46E1;
+    --morado1: #623D8F;
     --morado2: #9B66EC;
     --morado3: #B492F3;
     --morado4: #CDBAF8;
@@ -52,5 +52,13 @@
     .square
     {
         width: 90%;
+    }
+    #recommendations
+    {
+        margin-right: 0%;
+    }
+    #offers
+    {
+        margin-left: 5%;
     }
 }

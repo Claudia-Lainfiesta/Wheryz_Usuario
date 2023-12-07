@@ -115,8 +115,7 @@ echo "
     <!--Busacador/CSS=finder-->
     <nav class='search'>
         <div class='logo-wheryz'>
-            <img src='../img/image2vector.svg' alt='Wheryz'>
-            <h1 id='wheryz'>Wheryz</h1>
+            <img src='../img/logo-extendido.jpg' alt='Wheryz'>
         </div>
         <div class='search-box'>
             <form action='../connection/finder.php' method='post'>
@@ -135,9 +134,14 @@ echo "
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "<div class='result-item' data-id='" . $row['id'] . "'> Nombre: " . $row['name'] . "<br>Usuario: " . $row['username'] . " <span class='icono-favorito' onclick='marcarFavorito(this)' data-id='" . $row['id'] . "'>❤️</span></div>";
+        echo "
+            <a style='text-decoration:none;color:#000;' href='colaboradorid.php?id=" . $row['id'] . "'>
+                <div class='result-item' data-id='" . $row['id'] . "'> 
+                    Nombre: " . $row['name'] . "<br>
+                    Dirección: " . $row['username'] . " 
+                </div>
+            </a>";
     }
-
 } else {
     echo "<p class='no-results'>No se encontraron resultados.</p>";
 }

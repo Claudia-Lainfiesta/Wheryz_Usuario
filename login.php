@@ -31,11 +31,17 @@ if (!empty($_POST)) {
     <title>Wheryz</title>
 
     <link rel="stylesheet" href="css/main.css">
-    <link rel="shortcut icon" href="img/image2vector.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon">
 
     <script src="js/navbar.js" defer></script>
 </head>
 <body>
+    <nav class="options">
+      <ul>
+        <li class="active2"><a href="">Usuario</a></li>
+        <li><a href="">Colaborador</a></li>
+      </ul>
+    </nav>
         <nav class="navbar">
             <div class="brand-title">
                 <img src="img/image2vector.svg" alt="">

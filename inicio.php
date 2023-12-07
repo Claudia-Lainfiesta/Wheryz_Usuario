@@ -106,8 +106,7 @@ if (!isset($_SESSION['active'])) {
     <!--Buscador/CSS y PHP=finder-->
     <nav class="search">
         <div class="logo-wheryz">
-            <img src="img/image2vector.svg" alt="Wheryz">
-            <h1 id="wheryz">Wheryz</h1>
+            <img src="img/logo-extendido.jpg" alt="Wheryz">
         </div>
         <div class="search-box">
             <form action="connection/finder.php" method="post">
@@ -125,8 +124,7 @@ if (!isset($_SESSION['active'])) {
         <div class="mini-content">
             <div id="recommendations" class="square">
                 <h3>Recomendaciones</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio vero, at facilis non deserunt possimus accusamus illo voluptatibus dicta, ipsa sunt quia. Maiores a quas iure quia consequuntur eveniet quidem?
-                </p>
+                <iframe src="https://mazdaguatemala.com/" frameborder="0" style="width: 100%;"></iframe>
             </div>
             <div id="offers" class="square">
                 <h3>Ofertas</h3>

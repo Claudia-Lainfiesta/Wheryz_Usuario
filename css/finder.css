@@ -1,7 +1,7 @@
 :root
 {
     --morado0: #35155D;
-    --morado1: #8D46E1;
+    --morado1: #623D8F;
     --morado2: #9B66EC;
     --morado3: #B492F3;
     --morado4: #CDBAF8;
@@ -95,7 +95,7 @@
         max-width: 80px;
     }
 
-    .logo-wheryz h1 {
+    .logo-wheryz #wheryz {
         font-size: 30px;
     }
 
@@ -118,7 +118,7 @@
         max-width: 40px;
     }
 
-    .logo-wheryz h1 {
+    .logo-wheryz #wheryz {
         font-size: 15px;
     }
 
