@@ -83,7 +83,7 @@ $connection = connection();
 function obtenerInformacionUsuario($id)
 {
     $connection = connection();
-    $query = mysqli_query($connection, "SELECT * FROM tb_usuario WHERE id = '$id'");
+    $query = mysqli_query($connection, "SELECT * FROM tb_usuario WHERE id_usuario = '$id'");
     if (!$query) {
         die("Error al obtener información del usuario: " . mysqli_error($connection));
     }
@@ -94,4 +94,17 @@ function obtenerInformacionUsuario($id)
     mysqli_close($connection);
 
     return $user_info;
+}
+//configuracion
+function actualizarDatosUsuario($id, $nombre, $apellido, $nombre_usuario, $correo_electrónico, $teléfono)
+{
+    $connection = connection();
+    $query = "UPDATE tb_usuario
+              SET nombre = '$nombre',
+                  apellido = '$apellido',
+                  nombre_usuario = '$nombre_usuario',
+                  correo_electrónico = '$correo_electrónico',
+                  teléfono = '$teléfono'
+              WHERE id_usuario = '$id'";
+    mysqli_query($connection, $query);
 }

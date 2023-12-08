@@ -3,6 +3,16 @@ session_start();
 if (!isset($_SESSION['active'])) {
   header('Location: login.php');
 }
+
+include('connection/querys.php');
+
+// Obtener el ID del usuario desde la sesión
+$id_usuario = $_SESSION['id'];
+
+// Obtener la información del usuario desde la base de datos
+$informacion_usuario = obtenerInformacionUsuario($id_usuario);
+
+// ... (Tu código existente) ...
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -91,7 +101,7 @@ if (!isset($_SESSION['active'])) {
                 </a>
             </li>
             <li>
-                <a href="php/logout.php">
+                <a href="connection/logout.php">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1sb2ctb3V0Ij48cGF0aCBkPSJNOSAyMUg1YTIgMiAwIDAgMS0yLTJWNWEyIDIgMCAwIDEgMi0yaDQiLz48cG9seWxpbmUgcG9pbnRzPSIxNiAxNyAyMSAxMiAxNiA3Ii8+PGxpbmUgeDE9IjIxIiB4Mj0iOSIgeTE9IjEyIiB5Mj0iMTIiLz48L3N2Zz4="
                          alt="logout"/>
                     <span id="cerrar-sesión">Cerrar sesión</span>
@@ -122,51 +132,60 @@ if (!isset($_SESSION['active'])) {
       </div>
     </div>
     <form action="connection/actualizar_datos.php" method="post" class="datos">
-      <label for="name">
-        <span>
-          Nombre:
-        </span>
-        <div>
-          <input id="name" name="name" type="text" placeholder="Nombre" disabled>
-          <a href="" class="edit-link">
-            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1wZW4tbGluZSI+PHBhdGggZD0iTTEyIDIwaDkiLz48cGF0aCBkPSJNMTYuNSAzLjVhMi4xMiAyLjEyIDAgMCAxIDMgM0w3IDE5bC00IDEgMS00WiIvPjwvc3ZnPg==" alt="Edit button">
-          </a>
-        </div>
-      </label>
-      <label for="lastname">
+        <label for="nombre">
+            <span>Nombre:</span>
+            <div>
+                <input id="nombre" name="nombre" type="text" placeholder="Nombre" disabled value="<?php echo $informacion_usuario['nombre']; ?>">
+                <a href="" class="edit-link">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1wZW4tbGluZSI+PHBhdGggZD0iTTEyIDIwaDkiLz48cGF0aCBkPSJNMTYuNSAzLjVhMi4xMiAyLjEyIDAgMCAxIDMgM0w3IDE5bC00IDEgMS00WiIvPjwvc3ZnPg==" alt="Edit button">
+                </a>
+            </div>
+        </label>
+      <label for="apellido">
         <span>
           Apellido:
         </span>
         <div>
-          <input id="lastname" name="lastname" type="text" placeholder="Apellido" disabled>
+          <input id="apellido" name="apellido" type="text" placeholder="Apellido" disabled value="<?php echo $informacion_usuario['apellido']; ?>">
           <a href="" class="edit-link">
             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1wZW4tbGluZSI+PHBhdGggZD0iTTEyIDIwaDkiLz48cGF0aCBkPSJNMTYuNSAzLjVhMi4xMiAyLjEyIDAgMCAxIDMgM0w3IDE5bC00IDEgMS00WiIvPjwvc3ZnPg==" alt="Edit button">
           </a>
         </div>
       </label>
-      <label for="user">
+      <label for="nombre_usuario">
         <span>
           Nombre de usuario:
         </span>
         <div>
-          <input id="user" name="user" type="text" placeholder="Nombre de usuario" disabled>
+          <input id="nombre_usuario" name="nombre_usuario" type="text" placeholder="Nombre de usuario" disabled value="<?php echo $informacion_usuario['nombre_usuario']; ?>">
           <a href="" class="edit-link">
             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1wZW4tbGluZSI+PHBhdGggZD0iTTEyIDIwaDkiLz48cGF0aCBkPSJNMTYuNSAzLjVhMi4xMiAyLjEyIDAgMCAxIDMgM0w3IDE5bC00IDEgMS00WiIvPjwvc3ZnPg==" alt="Edit button">
           </a>
         </div>
       </label>
-      <label for="email">
+      <label for="correo_electrónico">
         <span>
           Correo electrónico:
         </span>
         <div>
-          <input id="email" name="email" type="email" placeholder="Correo electrónico" disabled>
+          <input id="correo_electrónico" name="correo_electrónico" type="email" placeholder="Correo electrónico" disabled value="<?php echo $informacion_usuario['correo_electrónico']; ?>">
           <a href="" class="edit-link">
             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1wZW4tbGluZSI+PHBhdGggZD0iTTEyIDIwaDkiLz48cGF0aCBkPSJNMTYuNSAzLjVhMi4xMiAyLjEyIDAgMCAxIDMgM0w3IDE5bC00IDEgMS00WiIvPjwvc3ZnPg==" alt="Edit button">
           </a>
         </div>
       </label>
-      <button>Guardar</button>
+      <label for="teléfono">
+        <span>
+          Teléfono:
+        </span>
+        <div>
+          <input id="teléfono" name="teléfono" type="number" placeholder="teléfono" disabled value="<?php echo $informacion_usuario['teléfono']; ?>">
+          <a href="" class="edit-link">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1wZW4tbGluZSI+PHBhdGggZD0iTTEyIDIwaDkiLz48cGF0aCBkPSJNMTYuNSAzLjVhMi4xMiAyLjEyIDAgMCAxIDMgM0w3IDE5bC00IDEgMS00WiIvPjwvc3ZnPg==" alt="Edit button">
+          </a>
+        </div>
+      </label>
+      <button name="guardar_datos">Guardar</button>
     </form>
   </main>
   <script>
