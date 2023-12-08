@@ -19,6 +19,7 @@ if (!isset($_SESSION['active'])) {
     <link rel="stylesheet" href="css/favoritos.css">
     <!--JS GENERAL-->
     <script src="js/nav.js"></script>
+    <script src="js/historial.js"></script>
     <!--CSS SOLO DE FAVORITOS-->
     <script src="js/favoritos.js"></script>
 </head>
@@ -109,44 +110,50 @@ if (!isset($_SESSION['active'])) {
         <div class="search-box">
             <form action="connection/finder.php" method="post">
                 <div class="buscador">
-                    <input type="text" id="busqueda" name="busqueda" class="search-input" placeholder="Búsqueda . . ." autocomplete="off"  require>
-                    <button type="submit" class="buscar">
+                    <input type="text" name="busqueda" class="search-input" placeholder="Búsqueda . . ." autocomplete="off" id="searchInput"  require>
+                    <button type="submit" class="buscar" onclick="realizarBusqueda()">
                         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg==" alt="">
                     </button>
                 </div>
             </form>
         </div>
       </nav>
-      <!--Contenido-->
-      <div class="content">
-      <h1>Colaboradores Favoritos</h1>
-    <table border="1">
-        <tr>
-            <th>Nombre</th>
-            <th>Dirección</th>
-            <th>Teléfono</th>
-        </tr>
-        <!-- Aquí se mostrará la información de los colaboradores favoritos -->
-    </table>
+        <!--Contenido-->
+        <div class="content">
+            <h1 class="result-title">Mis Favoritos</h1>
+            <table class="tabla-favoritos">
+                <tr>
+                    <th class="sub-title">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2MjNEOEYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1mb2xkZXItZWRpdCI+PHBhdGggZD0iTTguNCAxMC42YTIuMSAyLjEgMCAxIDEgMi45OSAyLjk4TDYgMTlsLTQgMSAxLTMuOVoiLz48cGF0aCBkPSJNMiAxMS41VjVhMiAyIDAgMCAxIDItMmgzLjlhMiAyIDAgMCAxIDEuNjkuOWwuODEgMS4yYTIgMiAwIDAgMCAxLjY3LjlIMjBhMiAyIDAgMCAxIDIgMnYxMGEyIDIgMCAwIDEtMiAyaC05LjUiLz48L3N2Zz4=" alt="">
+                        <p>Nombre:</p>
+                    </th>
+                    <th class="sub-title">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2MjNEOEYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tYXAtcGlubmVkIj48cGF0aCBkPSJNMTggOGMwIDQuNS02IDktNiA5cy02LTQuNS02LTlhNiA2IDAgMCAxIDEyIDAiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjgiIHI9IjIiLz48cGF0aCBkPSJNOC44MzUgMTRINWExIDEgMCAwIDAtLjkuN2wtMiA2Yy0uMS4xLS4xLjItLjEuMyAwIC42LjQgMSAxIDFoMThjLjYgMCAxLS40IDEtMSAwLS4xIDAtLjItLjEtLjNsLTItNmExIDEgMCAwIDAtLjktLjdoLTMuODM1Ii8+PC9zdmc+" alt="">
+                        <p>Dirección:</p>
+                    </th><th class="sub-title">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2MjNEOEYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1waG9uZSI+PHBhdGggZD0iTTIyIDE2LjkydjNhMiAyIDAgMCAxLTIuMTggMiAxOS43OSAxOS43OSAwIDAgMS04LjYzLTMuMDcgMTkuNSAxOS41IDAgMCAxLTYtNiAxOS43OSAxOS43OSAwIDAgMS0zLjA3LTguNjdBMiAyIDAgMCAxIDQuMTEgMmgzYTIgMiAwIDAgMSAyIDEuNzIgMTIuODQgMTIuODQgMCAwIDAgLjcgMi44MSAyIDIgMCAwIDEtLjQ1IDIuMTFMOC4wOSA5LjkxYTE2IDE2IDAgMCAwIDYgNmwxLjI3LTEuMjdhMiAyIDAgMCAxIDIuMTEtLjQ1IDEyLjg0IDEyLjg0IDAgMCAwIDIuODEuN0EyIDIgMCAwIDEgMjIgMTYuOTJ6Ii8+PC9zdmc+" alt="">
+                        <p>Teléfono:</p>
+                    </th>
+                </tr>
+            </table>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            // Realiza una solicitud al servidor para obtener la información de los colaboradores favoritos
-            $.ajax({
-                url: 'connection/obtener_favoritos.php', // Reemplaza con la URL de tu script PHP para obtener favoritos
-                type: 'GET',
-                success: function (response) {
-                    // Inserta la información de los colaboradores favoritos en la tabla
-                    $('table').append(response);
-                },
-                error: function (error) {
-                    console.error('Error en la solicitud AJAX: ', error);
-                }
-            });
-        });
-    </script>
-      </div>
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <script>
+                $(document).ready(function () {
+
+                    $.ajax({
+                        url: 'connection/obtener_favoritos.php',
+                        type: 'GET',
+                        success: function (response) {
+                            $('table').append(response);
+                        },
+                        error: function (error) {
+                            console.error('Error en la solicitud AJAX: ', error);
+                        }
+                    });
+                });
+            </script>
+        </div>
 </main>
 </body>
 </html>

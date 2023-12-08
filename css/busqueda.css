@@ -1,0 +1,41 @@
+:root
+{
+    --morado0: #35155D;
+    --morado1: #623D8F;
+    --morado2: #9B66EC;
+    --morado3: #B492F3;
+    --morado4: #CDBAF8;
+    --morado5: #E2D9FB;
+    --morado6: #F0EAFD;
+}
+.content
+{
+    width: 100%;
+}
+#searchHistory
+{
+    width: 90%;
+}
+#searchHistory h2
+{
+    font-size: 30px;
+    margin: 2.5% 0% 0% 5%;
+    padding-bottom: 1%;
+    border-bottom: solid 3px var(--morado1);
+}
+#searchHistory p
+{
+    margin: 0% 0% 0% 2%;
+    padding: 1%;
+}
+#historyList p
+{
+    border-bottom: solid 1px var(--morado5);
+}
+#historyList p:hover
+{
+    background-color: var(--morado5);
+    color: var(--morado1);
+    font-weight: bolder;
+}
+

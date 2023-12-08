@@ -31,6 +31,7 @@ echo "
     <link rel='stylesheet' href='../css/resultados.css'>
     <!--JS GENERAL-->
     <script src='../js/nav.js'></script>
+    <script src='../js/historial.js'></script>
 </head>
 <body>
 <!--Navbar principal/CSS y JS=nav-->
@@ -119,8 +120,8 @@ echo "
         <div class='search-box'>
             <form action='../connection/finder.php' method='post'>
                 <div class='buscador'>
-                    <input type='text' id='busqueda' name='busqueda' class='search-input' placeholder='Búsqueda . . .' require>
-                    <button type='submit' class='buscar'>
+                    <input type='text' name='busqueda' class='search-input' placeholder='Búsqueda . . .' id='searchInput' require>
+                    <button type='submit' class='buscar' onclick='realizarBusqueda()'>
                         <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg==' alt=''>
                     </button>
                 </div>

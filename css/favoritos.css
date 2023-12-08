@@ -1,0 +1,50 @@
+:root
+{
+    --morado0: #35155D;
+    --morado1: #623D8F;
+    --morado2: #9B66EC;
+    --morado3: #B492F3;
+    --morado4: #CDBAF8;
+    --morado5: #E2D9FB;
+    --morado6: #F0EAFD;
+}
+.content
+{
+    width: 100%;
+}
+.result-title
+{
+    font-size: 30px;
+    margin: 2.5% 0% 2.5% 5%;
+}
+.tabla-favoritos
+{
+    width: 90%;
+    margin: 2.5% 0% 2.5% 5%;
+    padding: 1.5%;
+    text-align: center;
+    border-radius: 10px;
+    border-top: solid 3px var(--morado1);
+    border-right: solid 3px var(--morado1);
+    border-bottom: solid 3px var(--morado1);
+    border-left: solid 3px var(--morado1);
+    box-shadow: 5px 5px 10px var(--morado5);
+}
+.sub-title
+{
+    border-bottom: solid 1px var(--morado0);
+    padding: 1% 0%;
+    transition: 0.5s;
+}
+.sub-title:hover
+{
+    background-color: var(--morado5);
+    color: var(--morado1);
+    font-size: 15px;
+    transition: 0.5s;
+}
+
+.content td
+{
+    margin-top: 20%;
+}

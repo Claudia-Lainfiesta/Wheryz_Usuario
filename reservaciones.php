@@ -17,6 +17,7 @@ if (!isset($_SESSION['active'])) {
     <link rel="stylesheet" href="css/finder.css">
     <!--CSS SOLO DE RESERVACIONES-->
     <link rel="stylesheet" href="css/reservaciones.css">
+    <script src="js/historial.js"></script>
     <!--JS GENERAL-->
     <script src="js/nav.js"></script>
     <!--CSS SOLO DE RESERVACIONES-->
@@ -108,8 +109,8 @@ if (!isset($_SESSION['active'])) {
         <div class="search-box">
             <form action="connection/finder.php" method="post">
                 <div class="buscador">
-                    <input type="text" id="busqueda" name="busqueda" class="search-input" placeholder="Búsqueda . . ." autocomplete="off" require>
-                    <button type="submit" class="buscar">
+                    <input type="text" name="busqueda" class="search-input" placeholder="Búsqueda . . ." autocomplete="off" id="searchInput"  require>
+                    <button type="submit" class="buscar" onclick="realizarBusqueda()">
                         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg==" alt="">
                     </button>
                 </div>

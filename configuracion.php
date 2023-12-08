@@ -104,7 +104,7 @@ if (!isset($_SESSION['active'])) {
 <main class="form-config">
     <h2>Configuración</h2>
     <a onclick="open_change_image()">
-      <img class="open-change-photo-menu" src="img/image2vector.svg" alt="Logo de Wheryz" id="profile-picture">
+      <img class="open-change-photo-menu" src="img/logo.jpg" alt="Logo de Wheryz" id="profile-picture">
     </a>
     <div id="desplegar-cambiar-foto" hidden>
       <div class="change-image" id="panel-add-notice">

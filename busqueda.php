@@ -19,6 +19,7 @@ if (!isset($_SESSION['active'])) {
     <link rel="stylesheet" href="css/busqueda.css">
     <!--JS GENERAL-->
     <script src="js/nav.js"></script>
+    <link rel="stylesheet" href="js/historial.js">
     <!--CSS JS DE BÚSQUEDA-->
 </head>
 <body>
@@ -108,18 +109,67 @@ if (!isset($_SESSION['active'])) {
         <div class="search-box">
             <form action="connection/finder.php" method="post">
                 <div class="buscador">
-                    <input type="text" id="busqueda" name="busqueda" class="search-input" placeholder="Búsqueda . . ." autocomplete="off"  require>
-                    <button type="submit" class="buscar">
+                    <input type="text" name="busqueda" class="search-input" placeholder="Búsqueda . . ." autocomplete="off" id="searchInput"  require>
+                    <button type="submit" class="buscar" onclick="realizarBusqueda()">
                         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zZWFyY2giPjxjaXJjbGUgY3g9IjExIiBjeT0iMTEiIHI9IjgiLz48cGF0aCBkPSJtMjEgMjEtNC4zLTQuMyIvPjwvc3ZnPg==" alt="">
                     </button>
                 </div>
             </form>
         </div>
-      </nav>
-      <!--Contenido-->
-      <div class="content">
-       
+    </nav>
+    <!--Contenido-->
+    <div class="content">
+        <div id="searchHistory">
+            <h2>Historial de Búsqueda</h2>
+            <p id="historyList"></p>
+        </div>
       </div>
 </main>
+
+    <script>
+        function realizarBusqueda() {
+            var searchTerm = document.getElementById('searchInput').value;
+
+            if (searchTerm.trim() === '') {
+                return;
+            }
+
+            agregarAlHistorial(searchTerm);
+
+        }
+
+        function agregarAlHistorial(searchTerm) {
+
+            var history = JSON.parse(sessionStorage.getItem('searchHistory')) || [];
+
+            history.push(searchTerm);
+
+            if (history.length > 10) {
+                history.shift();
+            }
+
+            sessionStorage.setItem('searchHistory', JSON.stringify(history));
+
+            actualizarHistorialEnPagina();
+        }
+
+        function actualizarHistorialEnPagina() {
+            var historyList = document.getElementById('historyList');
+            var history = JSON.parse(sessionStorage.getItem('searchHistory')) || [];
+
+            historyList.innerHTML = '';
+
+            history.forEach(function (term) {
+                var listItem = document.createElement('p');
+                listItem.textContent = term;
+                historyList.appendChild(listItem);
+            });
+        }
+
+        window.onload = function () {
+            actualizarHistorialEnPagina();
+        };
+    </script>
+
 </body>
 </html>
