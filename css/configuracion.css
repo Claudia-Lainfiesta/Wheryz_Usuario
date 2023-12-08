@@ -9,158 +9,164 @@
     --morado5: #E2D9FB;
     --morado6: #F0EAFD;
 }
-main
+.form-config h2
 {
+    margin: 2.5% 0% 2.5% 0%;
+    font-size: 50px;
     text-align: center;
 }
-h2
-{
-    font-size: 50px;
-    margin: 3%;
-    margin-bottom: 1%;
-}
-.form-config form label
-{
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
-}
-.form-config form input[type="submit"]
-{
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #fff;
-    background-color: var(--morado1);
-    cursor: pointer;
-}
-.form-config form input[type="submit"]:hover
-{
-    background-color: var(--morado2);
-}
-.change-image
-{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-}
-.change-image input[type="file"]
-{
-    width: 100%;
-    height: 100px;
-    border-radius: 5px;
-    display: block;
-    margin: 0 auto 10px;
-    padding: 10px;
-    cursor: pointer;
-    color: transparent;
-    border: 1px dashed #ccc;
-
-}
-.close
-{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    color: #ccc;
-    cursor: pointer;
-}
-#profile-picture
-{
+#profile-picture {
     width: 250px;
     height: 250px;
     border-radius: 50%;
     border: 1px solid #ccc;
     display: flex;
     margin: 0 auto;
-}
-.form-config .datos
-{
+  }
+  
+  .form-config form {
     min-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5%;
-}
-.form-config .datos a
-{
+  }
+  
+  .form-config form a {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 15px;
     text-decoration: none;
-}
-.form-config .datos a img
-{
+  }
+  
+  .form-config form a img {
     padding: 8px;
     color: #fff;
-    background-color: var(--morado2);
+    background-color: var(--morado1);
     border-radius: 3px;
-}
-.form-config .datos a img
-{
+  }
+  
+  .form-config form a img {
     color: #fff;
     text-decoration: none;
-}
-  .form-config .datos a img:hover
-{
-    background-color: var(--morado3);
-}
-
-.form-config .datos button
-{
-    min-width: 555px;
+  }
+  
+  .form-config form a img:hover {
+    background-color: var(--morado2);
+  }
+  
+  .form-config form button {
+    min-width: 500px;
     margin-top: 10px;
+    margin-bottom: 40px;
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: var(--morado2);
+    background-color: var(--morado1);
     color: #fff;
     font-weight: bold;
     cursor: pointer;
-}
-.form-config .datos button:hover
-{
-    background-color: var(--morado1);
-}
-.form-config .datos div
-{
+  }
+  
+  .form-config form button:hover {
+    background-color: var(--morado2);
+  }
+  
+  .form-config form div {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-.form-config .datos input
-{
+  }
+  
+  .form-config form input {
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     min-width: 500px;
-}
-.form-config .datos input:focus
-{
+  }
+  
+  .form-config form input:focus {
     outline: none;
-}
-.form-config .datos label {
+  }
+  
+  .form-config form label {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     margin-bottom: 10px;
-}
-  .form-config .datos label img
-{
+  }
+  
+  .form-config form label div textarea {
+    min-width: 500px;
+    min-height: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+  }
+  
+  .form-config form label img {
     margin-bottom: 5px;
-}
+  }
+  
+  .change-image {
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    background-color: white;
+    border-color: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .change-image form a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px;
+  }
+  
+  .change-image form a img {
+    width: 35px;
+    background-color: white;
+  }
+  
+  .change-image form a img:hover {
+    background-color: #ccc;
+  }
+  
+  .drop-container {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #ccc;
+    color: #444;
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+  }
+  
+  .drop-container:hover {
+    background: #eee;
+    border-color: #111;
+  }
+  
+  .drop-container:hover .drop-title {
+    color: #222;
+  }
+  
+  .drop-title {
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: color .2s ease-in-out;
+  }
+  

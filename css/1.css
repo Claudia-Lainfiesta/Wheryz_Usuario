@@ -1,0 +1,133 @@
+:root
+{
+    --morado0: #35155D;
+    --morado1: #623D8F;
+    --morado2: #9B66EC;
+    --morado3: #B492F3;
+    --morado4: #CDBAF8;
+    --morado5: #E2D9FB;
+    --morado6: #F0EAFD;
+}
+.content
+{
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+}
+.mini-content
+{
+    display: flex;
+    width: 90%;
+    margin: 0% 5%;
+    align-items: center;
+}
+.logo-company
+{
+    width: 40%;
+    justify-content: flex-end;
+    align-items: center;
+}
+.logo-company img{
+    width: 60%;
+    border: solid 1px var(--morado2);
+    border-radius: 10cm;
+}
+.info-company
+{
+    width: 60%;
+}
+.name-company
+{
+    display: flex;
+    width: 100%;
+    font-size: 35px;
+}
+.name-company img
+{
+    width: 35px;
+    margin-left: 2.5%;
+}
+.data-company div
+{
+    display: flex;
+    margin: 2% 0% 2% 1%;
+}
+.data-company div p
+{
+    margin: 0% 1% 0% 1.5%;
+    font-weight: bolder;
+}
+/*parte de abajo*/
+.mini-content2
+{
+    width: 90%;
+    margin: 2% 5%;
+    justify-content: center;
+
+}
+.mini-content2 div
+{
+    display: flex;
+    margin-bottom: 2%;
+}
+.mini-content2 div p
+{
+    font-size: 30px;
+    margin: 0% 1% 0% 1.5%;
+    font-weight: bolder;
+}
+.mini-content2 div img
+{
+    width: 40px;
+}
+.mini-content2 table
+{
+    width: 100%;
+}
+.mini-content2 table thead
+{
+    background-color: var(--morado1);
+    text-align: center;
+    color: #fff;
+}
+.mini-content2 table thead td
+{
+    padding: 1% 0% 1% 0%;
+}
+.mini-content2 table tbody td
+{
+    padding: 1% 0% 1% 1.5%;
+}
+.mini-content2 table tbody td
+{
+    border-bottom: solid 1px var(--morado1);
+}
+.reserve
+{
+    margin: 3% 0%;
+    background-color: var(--morado1);
+    color: #fff;
+    border: none;
+    padding: 1% 8%;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: 0.5s;
+}
+.reserve:hover
+{
+    background-color: #fff;
+    color: var(--morado1);
+    border: solid 1px var(--morado1);
+    transition: 0.5s;
+}
+@media only screen and (max-width: 1050px) {
+    .name-company
+{
+    font-size: 25px;
+}
+}
+@media only screen and (max-width: 500px) {
+    .name-company
+{
+    font-size: 15px;
+}
+}

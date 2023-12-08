@@ -126,7 +126,7 @@ if (!isset($_SESSION['active'])) {
             <div id="recommendations" class="square">
                 <h3>Recomendaciones</h3>
                 <br>
-                <iframe src="https://mazdaguatemala.com/" frameborder="0" style="width: 100%; height: 80%;"></iframe>
+                <iframe src="colaboradores/1.php" frameborder="0" style="width: 100%; height: 80%;"></iframe>
             </div>
             <div id="offers" class="square">
                 <h3>Ofertas</h3>

@@ -1,8 +1,6 @@
-// ... (tu código existente)
-
 function marcarFavorito(element) {
     const tiendaId = element.getAttribute('data-id');
-  
+
     fetch('favoritos.php', {
       method: 'POST',
       headers: {
@@ -28,6 +26,3 @@ function marcarFavorito(element) {
       console.error('Error de red:', error);
     });
   }
-  
-  // ... (tu código existente)
-  

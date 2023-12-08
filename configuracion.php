@@ -6,13 +6,10 @@ if (!isset($_SESSION['active'])) {
 
 include('connection/querys.php');
 
-// Obtener el ID del usuario desde la sesión
 $id_usuario = $_SESSION['id'];
 
-// Obtener la información del usuario desde la base de datos
 $informacion_usuario = obtenerInformacionUsuario($id_usuario);
 
-// ... (Tu código existente) ...
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -112,21 +109,23 @@ $informacion_usuario = obtenerInformacionUsuario($id_usuario);
 </header>
 <!--Contenido/ JS = CONFIGURACION (cambio de foto) y EDICION (editar campos)-->
 <main class="form-config">
-    <h2>Configuración</h2>
+<h2>Configuración</h2>
     <a onclick="open_change_image()">
       <img class="open-change-photo-menu" src="img/logo.jpg" alt="Logo de Wheryz" id="profile-picture">
     </a>
     <div id="desplegar-cambiar-foto" hidden>
       <div class="change-image" id="panel-add-notice">
-        <form action="php/new-notice.php" method="post">
+        <form action="connection/new-notice.php" method="post">
           <a class="close" onclick="close_change_image()">
-            <span class="material-symbols-outlined">
-              x
-            </span>
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS14Ij48cGF0aCBkPSJNMTggNiA2IDE4Ii8+PHBhdGggZD0ibTYgNiAxMiAxMiIvPjwvc3ZnPg==" />
           </a>
-          <h3>Cambiar fotografía</h3>
+          <h2>Cambiar fotografía</h2>
           <label for="photo de perfil">Archivo:</label>
-          <input id="photo de perfil" name="photo de perfil" type="file" placeholder="Drop and click">
+          <label for="images" class="drop-container" id="dropcontainer">
+            <span class="drop-title">Suelte los archivos aquí</span>
+            or
+            <input type="file" id="images" accept="image/*" required>
+          </label>
           <input type="submit" value="Guardar">
         </form>
       </div>

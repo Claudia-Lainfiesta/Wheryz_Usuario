@@ -3,13 +3,14 @@ session_start();
 if (!isset($_SESSION['active'])) {
   header('Location: login.php');
 }
+$id_usuario = $_SESSION['id'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wheryz | Mazda Ivesa</title>
+    <title>Wheryz</title>
     <link rel="shortcut icon" href="../img/logo.jpg" type="image/x-icon">
     <!--CSS GENERAL-->
     <link rel="stylesheet" href="../css/nav.css">
@@ -117,19 +118,89 @@ if (!isset($_SESSION['active'])) {
             </form>
         </div>
       </nav>
-      <!--Contenido-->
-    <h1>Mazda Ivesa</h1>
-    <img id="agregar-favoritos" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2MjNEOEYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zdGFyIj48cG9seWdvbiBwb2ludHM9IjEyIDIgMTUuMDkgOC4yNiAyMiA5LjI3IDE3IDE0LjE0IDE4LjE4IDIxLjAyIDEyIDE3Ljc3IDUuODIgMjEuMDIgNyAxNC4xNCAyIDkuMjcgOC45MSA4LjI2IDEyIDIiLz48L3N2Zz4=" alt="">
+    <div class="content">
+        <div class="mini-content">
+            <div class="logo-company">
+                <center>
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXVzZXIiPjxwYXRoIGQ9Ik0xOSAyMXYtMmE0IDQgMCAwIDAtNC00SDlhNCA0IDAgMCAwLTQgNHYyIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSI3IiByPSI0Ii8+PC9zdmc+" alt="logo de colaborador">
+                </center>
+            </div>
+            <div class="info-company">
+                <div class="name-company">
+                    <h1>Wheryz</h1>
+                    <img id="agregar-favoritos" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2MjNEOEYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zdGFyIj48cG9seWdvbiBwb2ludHM9IjEyIDIgMTUuMDkgOC4yNiAyMiA5LjI3IDE3IDE0LjE0IDE4LjE4IDIxLjAyIDEyIDE3Ljc3IDUuODIgMjEuMDIgNyAxNC4xNCAyIDkuMjcgOC45MSA4LjI2IDEyIDIiLz48L3N2Zz4=" alt="icon-fav">
+                </div>
+                <div class="data-company">
+                    <div>
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2MjNEOEYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tYXAtcGlubmVkIj48cGF0aCBkPSJNMTggOGMwIDQuNS02IDktNiA5cy02LTQuNS02LTlhNiA2IDAgMCAxIDEyIDAiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjgiIHI9IjIiLz48cGF0aCBkPSJNOC44MzUgMTRINWExIDEgMCAwIDAtLjkuN2wtMiA2Yy0uMS4xLS4xLjItLjEuMyAwIC42LjQgMSAxIDFoMThjLjYgMCAxLS40IDEtMSAwLS4xIDAtLjItLjEtLjNsLTItNmExIDEgMCAwIDAtLjktLjdoLTMuODM1Ii8+PC9zdmc+" alt="icon">
+                        <p>Dirección:</p>
+                        <label for="">Info</label>
+                    </div>
+                    <div>
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2MjNEOEYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1waG9uZSI+PHBhdGggZD0iTTIyIDE2LjkydjNhMiAyIDAgMCAxLTIuMTggMiAxOS43OSAxOS43OSAwIDAgMS04LjYzLTMuMDcgMTkuNSAxOS41IDAgMCAxLTYtNiAxOS43OSAxOS43OSAwIDAgMS0zLjA3LTguNjdBMiAyIDAgMCAxIDQuMTEgMmgzYTIgMiAwIDAgMSAyIDEuNzIgMTIuODQgMTIuODQgMCAwIDAgLjcgMi44MSAyIDIgMCAwIDEtLjQ1IDIuMTFMOC4wOSA5LjkxYTE2IDE2IDAgMCAwIDYgNmwxLjI3LTEuMjdhMiAyIDAgMCAxIDIuMTEtLjQ1IDEyLjg0IDEyLjg0IDAgMCAwIDIuODEuN0EyIDIgMCAwIDEgMjIgMTYuOTJ6Ii8+PC9zdmc+" alt="icon">
+                        <p>Teléfono:</p>
+                        <label for="">Info</label>
+                    </div>
+                    <div>
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2MjNEOEYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ib29rLW9wZW4tdGV4dCI+PHBhdGggZD0iTTIgM2g2YTQgNCAwIDAgMSA0IDR2MTRhMyAzIDAgMCAwLTMtM0gyeiIvPjxwYXRoIGQ9Ik0yMiAzaC02YTQgNCAwIDAgMC00IDR2MTRhMyAzIDAgMCAxIDMtM2g3eiIvPjxwYXRoIGQ9Ik02IDhoMiIvPjxwYXRoIGQ9Ik02IDEyaDIiLz48cGF0aCBkPSJNMTYgOGgyIi8+PHBhdGggZD0iTTE2IDEyaDIiLz48L3N2Zz4=" alt="icon">
+                        <p>Descripción:</p>
+                        <label for="">Info</label>
+                    </div>
+                    <div>
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2MjNEOEYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1hbGFybS1jbG9jayI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMyIgcj0iOCIvPjxwYXRoIGQ9Ik0xMiA5djRsMiAyIi8+PHBhdGggZD0iTTUgMyAyIDYiLz48cGF0aCBkPSJtMjIgNi0zLTMiLz48cGF0aCBkPSJNNi4zOCAxOC43IDQgMjEiLz48cGF0aCBkPSJNMTcuNjQgMTguNjcgMjAgMjEiLz48L3N2Zz4=" alt="icon">
+                        <p>Horario:</p>
+                        <label for="">Info</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mini-content2">
+            <div>
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2MjNEOEYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1oZWxwaW5nLWhhbmQiPjxwYXRoIGQ9Im0zIDE1IDUuMTItNS4xMkEzIDMgMCAwIDEgMTAuMjQgOUgxM2EyIDIgMCAxIDEgMCA0aC0yLjVtNC0uNjggNC4xNy00Ljg5YTEuODggMS44OCAwIDAgMSAyLjkyIDIuMzZsLTQuMiA1Ljk0QTMgMyAwIDAgMSAxNC45NiAxN0g5LjgzYTIgMiAwIDAgMC0xLjQyLjU5TDcgMTkiLz48cGF0aCBkPSJtMiAxNCA2IDYiLz48L3N2Zz4=" alt="icon">
+                <p>Servicios:</p>
+            </div>
+        <table>
+            <thead>
+                <tr>
+                    <td>Nombre</td>
+                    <td>Descripción</td>
+                    <td>Costo</td>
+                    <td>Acción</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>info</td>
+                    <td>info</td>
+                    <td>info</td>
+                    <td>info</td>
+                </tr>
+                <tr>
+                    <td>info</td>
+                    <td>info</td>
+                    <td>info</td>
+                    <td>info</td>
+                </tr>
+            </tbody>
+        </table>
+        <center>
+            <a href="#">
+                <button class="reserve">Reservar</button>
+            </a>
+        </center>
+        </div>
+    </div>
 </main>
     <script>
         $(document).ready(function () {
             $('#agregar-favoritos').on('click', function () {
-                var id_usuario = 1;
+                var id_usuario = '$id';
                 var id_colaborador = 1;
                 var isFavorito = $(this).hasClass('favorito');
 
                 $.ajax({
-                    url: '../connection/favoritoss.php',
+                    url: '../connection/favoritos2.php',
                     type: 'POST',
                     data: {
                         id_usuario: id_usuario,

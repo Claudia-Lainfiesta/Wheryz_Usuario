@@ -1,10 +1,7 @@
-// Memoria de estado
 window.addEventListener('unload', function () {
   const currentState = getCurrentState();
   saveState(currentState);
 });
-
-// Cargar estado
 document.addEventListener('DOMContentLoaded', function () {
   loadState();
 });
