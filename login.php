@@ -31,6 +31,7 @@ if (!empty($_POST)) {
     <title>Wheryz</title>
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon">
 
     <script src="js/navbar.js" defer></script>
@@ -59,7 +60,8 @@ if (!empty($_POST)) {
               </ul>
             </div>
           </nav>
-
+  <br>
+  <br>
     <div class="container">
         <div class="mini-container">
             <div class="titulo">
