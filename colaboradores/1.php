@@ -122,7 +122,7 @@ $id_usuario = $_SESSION['id'];
         <div class="mini-content">
             <div class="logo-company">
                 <center>
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXVzZXIiPjxwYXRoIGQ9Ik0xOSAyMXYtMmE0IDQgMCAwIDAtNC00SDlhNCA0IDAgMCAwLTQgNHYyIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSI3IiByPSI0Ii8+PC9zdmc+" alt="logo de colaborador">
+                    <img src="../img/logo.jpg" alt="logo de colaborador">
                 </center>
             </div>
             <div class="info-company">
@@ -154,7 +154,27 @@ $id_usuario = $_SESSION['id'];
                 </div>
             </div>
         </div>
-
+        <div class="mini-content2">
+            <div>
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2MjNEOEYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1iZWxsLXJpbmciPjxwYXRoIGQ9Ik02IDhhNiA2IDAgMCAxIDEyIDBjMCA3IDMgOSAzIDlIM3MzLTIgMy05Ii8+PHBhdGggZD0iTTEwLjMgMjFhMS45NCAxLjk0IDAgMCAwIDMuNCAwIi8+PHBhdGggZD0iTTQgMkMyLjggMy43IDIgNS43IDIgOCIvPjxwYXRoIGQ9Ik0yMiA4YzAtMi4zLS44LTQuMy0yLTYiLz48L3N2Zz4=" alt="icon">
+                <p>Avisos:</p>
+            </div>
+        <table>
+            <thead>
+                <tr>
+                    <td>Fecha</td>
+                    <td>Descripción</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>info</td>
+                    <td>info</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <br>
         <div class="mini-content2">
             <div>
                 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2MjNEOEYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1oZWxwaW5nLWhhbmQiPjxwYXRoIGQ9Im0zIDE1IDUuMTItNS4xMkEzIDMgMCAwIDEgMTAuMjQgOUgxM2EyIDIgMCAxIDEgMCA0aC0yLjVtNC0uNjggNC4xNy00Ljg5YTEuODggMS44OCAwIDAgMSAyLjkyIDIuMzZsLTQuMiA1Ljk0QTMgMyAwIDAgMSAxNC45NiAxN0g5LjgzYTIgMiAwIDAgMC0xLjQyLjU5TDcgMTkiLz48cGF0aCBkPSJtMiAxNCA2IDYiLz48L3N2Zz4=" alt="icon">
@@ -166,18 +186,10 @@ $id_usuario = $_SESSION['id'];
                     <td>Nombre</td>
                     <td>Descripción</td>
                     <td>Costo</td>
-                    <td>Acción</td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>info</td>
-                    <td>info</td>
-                    <td>info</td>
-                    <td>info</td>
-                </tr>
-                <tr>
-                    <td>info</td>
                     <td>info</td>
                     <td>info</td>
                     <td>info</td>
